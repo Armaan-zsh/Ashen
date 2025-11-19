@@ -1,0 +1,2 @@
+[console_scripts]
+forensic-surgeon = digital_forensic_surgeon.cli:main
