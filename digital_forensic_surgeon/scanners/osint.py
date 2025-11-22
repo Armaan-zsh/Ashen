@@ -98,7 +98,7 @@ class AsyncOSINTScanner:
         url = site.url_template.format(username=quote(username))
         try:
             await asyncio.sleep(site.rate_limit)
-            async with session.get(url, timeout=self.config.get('osint_timeout', 10), allow_redirects=False) as response:
+            async with session.get(url, timeout=self.config.get('osint_timeout', 10) if isinstance(self.config, dict) else getattr(self.config, 'osint_timeout', 10), allow_redirects=False) as response:
                 return await self._analyze_response(site, response, url, username)
         except (asyncio.TimeoutError, aiohttp.ClientError):
             return None

@@ -58,6 +58,8 @@ class WiFiScanner:
                 ["netsh", "wlan", "show", "profiles"],
                 capture_output=True,
                 text=True,
+                encoding='utf-8',
+                errors='ignore',
                 timeout=30
             )
             
@@ -80,6 +82,8 @@ class WiFiScanner:
                 ["netsh", "wlan", "show", "interfaces"],
                 capture_output=True,
                 text=True,
+                encoding='utf-8',
+                errors='ignore',
                 timeout=30
             )
             
@@ -203,6 +207,8 @@ class WiFiScanner:
                     ["netsh", "wlan", "show", "interfaces"],
                     capture_output=True,
                     text=True,
+                    encoding='utf-8',
+                    errors='ignore',
                     timeout=10
                 )
                 if result.returncode == 0:
