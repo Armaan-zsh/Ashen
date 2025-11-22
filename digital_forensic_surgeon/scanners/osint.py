@@ -8,7 +8,7 @@ import aiohttp
 import asyncio
 from urllib.parse import quote
 from pathlib import Path
-from typing import Dict, List, Any, Optional, Generator, Set
+from typing import Dict, List, Any, Optional, Generator, Set, Union
 from datetime import datetime
 from dataclasses import dataclass
 import json
@@ -31,7 +31,7 @@ class OSINTSite:
 
 
 class AsyncOSINTScanner:
-    def __init__(self, sites: List[OSINTSite], config: Dict[str, Any]):
+    def __init__(self, sites: List[OSINTSite], config: Union[Dict[str, Any], Any]):
         self.target_sites = sites
         self.config = config
         self.session_headers = {
@@ -98,7 +98,9 @@ class AsyncOSINTScanner:
         url = site.url_template.format(username=quote(username))
         try:
             await asyncio.sleep(site.rate_limit)
-            async with session.get(url, timeout=self.config.get('osint_timeout', 10) if isinstance(self.config, dict) else getattr(self.config, 'osint_timeout', 10), allow_redirects=False) as response:
+            # Handle both Dict and ForensicConfig objects
+            timeout = self.config.get('osint_timeout', 10) if isinstance(self.config, dict) else getattr(self.config, 'osint_timeout', 10)
+            async with session.get(url, timeout=timeout, allow_redirects=False) as response:
                 return await self._analyze_response(site, response, url, username)
         except (asyncio.TimeoutError, aiohttp.ClientError):
             return None
@@ -111,9 +113,9 @@ class AsyncOSINTScanner:
 
 
 class OSINTScanner:
-    """Open Source Intelligence scanner - enumerates usernames across platforms."""
+    """Open Source Intelligence scanner - enumerates username across platforms."""
     
-    def __init__(self, config: Optional[Dict[str, Any]] = None):
+    def __init__(self, config: Optional[Union[Dict[str, Any], Any]] = None):
         self.config = config or {}
         self.target_sites = self._get_target_sites()
         self.results_cache: Dict[str, Dict[str, Any]] = {}

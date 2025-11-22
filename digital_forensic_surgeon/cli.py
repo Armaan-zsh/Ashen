@@ -856,6 +856,72 @@ class ForensicCLI:
             self.console.print(f"[bold red]❌ ERROR: {message}[/bold red]")
         else:
             print(f"\nERROR: {message}")
+    
+    def run_reality_check(self, duration: int = 300, show_live: bool = False):
+        """Run Reality Check network tracking."""
+        try:
+            from digital_forensic_surgeon.scanners.reality_check_monitor import RealityCheckMonitor
+            
+            if self.rich_available:
+                self.console.print("[bold red]🔥 REALITY CHECK - Starting network monitoring...[/bold red]")
+            
+            # Create monitor
+            monitor = RealityCheckMonitor(proxy_port=8080)
+            
+            # Start monitoring
+            monitor.start(duration_seconds=duration)
+            
+            # Show live dashboard if requested
+            if show_live:
+                import subprocess
+                import threading
+                import time
+                
+                def run_dashboard():
+                    time.sleep(3)  # Give proxy time to start
+                    from digital_forensic_surgeon.dashboard.reality_check_dashboard import run_dashboard as dashboard
+                    dashboard(monitor)
+                
+                # Start dashboard in background
+                dashboard_thread = threading.Thread(target=run_dashboard, daemon=True)
+                dashboard_thread.start()
+                
+                # Start streamlit
+                subprocess.run([
+                    sys.executable, "-m", "streamlit", "run",
+                    str(Path(__file__).parent / "dashboard" / "reality_check_dashboard.py"),
+                    "--server.headless", "true"
+                ])
+            else:
+                # Wait for monitoring to complete
+                import time
+                while monitor.is_monitoring:
+                    time.sleep(1)
+            
+            # Show final stats
+            monitor.stop()
+            
+            return 0
+            
+        except Exception as e:
+            self._show_error(f"Reality Check failed: {e}")
+            import traceback
+            traceback.print_exc()
+            return 1
+    
+    def install_certificate(self):
+        """Install mitmproxy certificate."""
+        try:
+            from digital_forensic_surgeon.scanners.mitm_proxy_manager import MITMProxyManager
+            
+            proxy = MITMProxyManager()
+            proxy.install_certificate()
+            
+            return 0
+            
+        except Exception as e:
+            self._show_error(f"Certificate installation failed: {e}")
+            return 1
 
 
 def main():
@@ -935,6 +1001,19 @@ Examples:
     parser.add_argument('--quiet', action='store_true',
                        help='Quiet mode (minimal output)')
     
+    # Reality Check Commands
+    parser.add_argument('--reality-check', action='store_true',
+                       help='Start Real-time network tracking (Beast Mode v2)')
+    
+    parser.add_argument('--install-cert', action='store_true',
+                       help='Install mitmproxy root certificate (one-time setup)')
+    
+    parser.add_argument('--track-duration', type=int, default=300,
+                       help='Duration for network tracking in seconds (default: 300)')
+    
+    parser.add_argument('--show-live', action='store_true',
+                       help='Show live dashboard during Reality Check')
+    
     args = parser.parse_args()
     
     # Create CLI instance
@@ -992,10 +1071,17 @@ Examples:
         if args.info:
             return cli.show_system_info()
         
+        # Handle Reality Check commands
+        if args.install_cert:
+            return cli.install_certificate()
+        
+        if args.reality_check:
+            return cli.run_reality_check(args.track_duration, args.show_live)
+        
         # Default: run interactive mode
         if not any([args.full_scan, args.quick_scan, args.target, args.list_services,
                    args.search, args.risk_assessment, args.generate_reports, args.setup_db, 
-                   args.validate_db, args.version, args.info]):
+                   args.validate_db, args.version, args.info, args.reality_check, args.install_cert]):
             return cli.interactive_mode()
         
         return 0
