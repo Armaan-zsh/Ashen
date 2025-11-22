@@ -127,10 +127,13 @@ class RealityCheckMonitor:
             # Sleep briefly
             time.sleep(0.5)
         
-        # Monitoring duration elapsed
+        # Monitoring duration elapsed - just stop monitoring, don't call stop() from thread
         if self.is_monitoring:
-            self.stop()
+            self.is_monitoring = False
+            self.proxy_manager.stop()
+            self._update_stats()
             print("\n[Reality Check] ⏱ Monitoring duration completed")
+            self._print_summary()
     
     def stop(self):
         """Stop Reality Check monitoring"""
@@ -144,8 +147,9 @@ class RealityCheckMonitor:
         # Stop proxy
         self.proxy_manager.stop()
         
-        # Wait for thread
-        if self.monitor_thread and self.monitor_thread.is_alive():
+        # Wait for thread (only if called from outside the thread)
+        import threading
+        if self.monitor_thread and self.monitor_thread.is_alive() and threading.current_thread() != self.monitor_thread:
             self.monitor_thread.join(timeout=5)
         
         # Final stats update
