@@ -1,0 +1,4 @@
+venv/
+*.pyc
+__pycache__/
+digital_forensic_surgeon.egg-info/
