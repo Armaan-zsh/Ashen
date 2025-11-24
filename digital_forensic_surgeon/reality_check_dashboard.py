@@ -144,91 +144,11 @@ st.markdown("---")
 # TABS
 tab1, tab2, tab3, tab4 = st.tabs(["🕸️ Network Map", "📊 Data & Money", "🎭 Poison Profile", "🛡️ Take Action"])
 
-# TAB 1: NETWORK VISUALIZATION
+# TAB 1: INTERACTIVE GRAPH (Obsidian-style)
 with tab1:
-    st.markdown("## 🕸️ Your Tracking Network")
-    st.markdown("*See how companies share YOUR data*")
-    
-    # Build network graph
-    G = nx.Graph()
-    G.add_node("YOU", node_type="user")
-    
-    for company_name, count, avg_risk, category in companies[:15]:  # Top 15
-        G.add_node(company_name, node_type="company", count=count, risk=avg_risk)
-        G.add_edge("YOU", company_name, weight=count)
-    
-    # Calculate layout
-    pos = nx.spring_layout(G, k=2, iterations=50, seed=42)
-    
-    # Create edge traces
-    edge_traces = []
-    for edge in G.edges():
-        x0, y0 = pos[edge[0]]
-        x1, y1 = pos[edge[1]]
-        weight = G[edge[0]][edge[1]]['weight']
-        
-        edge_traces.append(go.Scatter(
-            x=[x0, x1, None],
-            y=[y0, y1, None],
-            mode='lines',
-            line=dict(width=min(weight/100, 5), color='rgba(255, 0, 0, 0.3)'),
-            hoverinfo='none',
-            showlegend=False
-        ))
-    
-    # Create node trace
-    node_x = []
-    node_y = []
-    node_text = []
-    node_size = []
-    node_color = []
-    
-    for node in G.nodes():
-        x, y = pos[node]
-        node_x.append(x)
-        node_y.append(y)
-        
-        if node == "YOU":
-            node_size.append(60)
-            node_color.append('#00ffff')
-            node_text.append("🎯 YOU")
-        else:
-            data = G.nodes[node]
-            count = data['count']
-            risk = data['risk']
-            
-            node_size.append(min(20 + count/10, 50))
-            node_color.append('#ff0000' if risk >= 8 else '#ffaa00' if risk >= 5 else '#00ff00')
-            node_text.append(f"{node}<br>{count:,} tracks<br>Risk: {risk:.1f}/10")
-    
-    node_trace = go.Scatter(
-        x=node_x,
-        y=node_y,
-        mode='markers+text',
-        text=[t.split('<br>')[0] for t in node_text],
-        hovertext=node_text,
-        hoverinfo='text',
-        textposition="top center",
-        marker=dict(size=node_size, color=node_color, line=dict(width=2, color='white')),
-        showlegend=False
-    )
-    
-    # Create figure
-    fig = go.Figure(data=edge_traces + [node_trace])
-    fig.update_layout(
-        showlegend=False,
-        hovermode='closest',
-        xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-        yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-        plot_bgcolor='#0e1117',
-        paper_bgcolor='#0e1117',
-        height=600,
-        margin=dict(l=0, r=0, t=0, b=0)
-    )
-    
-    st.plotly_chart(fig, use_container_width=True)
-    
-    st.info("💡 **YOU** are cyan in the center. Lines show data flow. Bigger nodes = more tracking. Red = dangerous!")
+    from digital_forensic_surgeon.dashboard.obsidian_graph import render_interactive_graph
+    render_interactive_graph(db.conn)
+
 
 # TAB 2: DATA & MONEY
 with tab2:
