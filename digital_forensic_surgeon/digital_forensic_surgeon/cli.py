@@ -1080,11 +1080,11 @@ Examples:
             return cli.show_system_info()
         
         
-        # Handle Tracking History commands (NEW!)
+        # Handle Tracking History commands (UPDATED!)
         if args.scan_history:
             print("🔍 Scanning browser history...")
             import subprocess
-            subprocess.run([sys.executable, "test_historical_analyzer.py"])
+            subprocess.run([sys.executable, "scan_history.py"])
             return 0
         
         if args.start:
