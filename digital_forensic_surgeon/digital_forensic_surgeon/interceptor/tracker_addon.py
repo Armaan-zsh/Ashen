@@ -1,13 +1,9 @@
-"""
-mitmproxy Addon for Tracker Interception
-Filters and decodes tracking requests in real-time
-"""
-
 from mitmproxy import http, ctx
 from datetime import datetime
 import json
 import re
 from urllib.parse import urlparse, parse_qs
+from pathlib import Path
 
 class TrackerInterceptor:
     """Intercepts and decodes tracking requests"""
@@ -23,6 +19,8 @@ class TrackerInterceptor:
     
     def __init__(self):
         self.events_captured = 0
+        self.live_events_file = Path.home() / ".mitmproxy" / "live_events.jsonl"
+        self.live_events_file.parent.mkdir(parents=True, exist_ok=True)
     
     def request(self, flow: http.HTTPFlow):
         """Intercept outgoing requests"""
@@ -40,13 +38,30 @@ class TrackerInterceptor:
         tracker_type = self._identify_tracker(domain, url)
         decoded_data = self._decode_payload(flow, tracker_type)
         
+        # Create live event
+        live_event = {
+            'event_id': self.events_captured,
+            'timestamp': datetime.now().isoformat(),
+            'tracker': tracker_type,
+            'url': url[:100] + '...' if len(url) > 100 else url,
+            'data': decoded_data
+        }
+        
+        # Broadcast to live feed
+        self._broadcast_live(live_event)
+        
         # Log to console
         ctx.log.info(f"🎯 TRACKER #{self.events_captured}: {tracker_type}")
         ctx.log.info(f"   URL: {url[:100]}...")
         ctx.log.info(f"   Data: {json.dumps(decoded_data, indent=2)}")
-        
-        # TODO: Send to dashboard via WebSocket
-        # TODO: Save to database
+    
+    def _broadcast_live(self, event: dict):
+        """Broadcast event to live feed file"""
+        try:
+            with open(self.live_events_file, 'a') as f:
+                f.write(json.dumps(event) + '\n')
+        except Exception as e:
+            ctx.log.error(f"Failed to broadcast: {e}")
         
     def response(self, flow: http.HTTPFlow):
         """Intercept responses (for future use)"""

@@ -19,54 +19,87 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# PREMIUM CSS
+# PREMIUM CSS - Enhanced for Week 2
 st.markdown("""
 <style>
+    /* Hide Streamlit default elements */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
     
+    /* Import Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    
+    /* Global styles */
+    * {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    /* Red banner - improved */
     .red-banner {
         background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
-        padding: 30px;
+        padding: 25px 30px;
         color: white;
         text-align: center;
-        font-size: 28px;
-        font-weight: bold;
-        border-radius: 10px;
+        font-size: 24px;
+        font-weight: 700;
+        border-radius: 12px;
         margin-bottom: 30px;
-        box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+        box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
         animation: pulse 2s infinite;
+        letter-spacing: 0.5px;
     }
     
     @keyframes pulse {
-        0%, 100% { box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4); }
-        50% { box-shadow: 0 8px 25px rgba(255, 0, 0, 0.6); }
+        0%, 100% { box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3); }
+        50% { box-shadow: 0 8px 30px rgba(255, 0, 0, 0.5); }
     }
     
+    /* Money counter - enhanced */
     .money-counter {
-        font-size: 56px;
-        font-weight: bold;
-        color: #00ff00;
+        font-size: 64px;
+        font-weight: 700;
+        color: #00ff41;
         text-align: center;
-        text-shadow: 0 0 20px #00ff00;
+        text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
         font-family: 'Courier New', monospace;
+        margin: 20px 0;
     }
     
+    /* Tracker card - improved */
     .tracker-card {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-        padding: 15px;
-        border-radius: 8px;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        padding: 20px;
+        border-radius: 10px;
         border-left: 4px solid #ff0000;
-        margin: 8px 0;
+        margin: 10px 0;
+        transition: transform 0.2s, box-shadow 0.2s;
     }
     
+    .tracker-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+    }
+    
+    /* Stat box - cleaner */
     .stat-box {
         background: rgba(255, 255, 255, 0.05);
-        padding: 12px;
-        border-radius: 6px;
+        padding: 15px;
+        border-radius: 8px;
         text-align: center;
-        margin: 5px 0;
+        margin: 8px 0;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+        .red-banner {
+            font-size: 18px;
+            padding: 20px;
+        }
+        .money-counter {
+            font-size: 48px;
+        }
     }
 </style>
 """, unsafe_allow_html=True)
@@ -142,16 +175,21 @@ render_simple_heatmap(db.conn)
 st.markdown("---")
 
 # TABS
-tab1, tab2, tab3, tab4 = st.tabs(["🕸️ Network Map", "📊 Data & Money", "🎭 Poison Profile", "🛡️ Take Action"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["🔴 Live Feed", "🕸️ Network", "📊 Data & Money", "🎭 Poison", "🛡️ Actions"])
 
-# TAB 1: INTERACTIVE GRAPH (Obsidian-style)
+# TAB 1: LIVE FEED (NEW!)
 with tab1:
+    from digital_forensic_surgeon.dashboard.live_feed import render_live_feed
+    render_live_feed()
+
+# TAB 2: INTERACTIVE GRAPH
+with tab2:
     from digital_forensic_surgeon.dashboard.obsidian_graph import render_interactive_graph
     render_interactive_graph(db.conn)
 
 
-# TAB 2: DATA & MONEY
-with tab2:
+# TAB 3: DATA & MONEY
+with tab3:
     col1, col2 = st.columns([2, 1])
     
     with col1:
@@ -196,8 +234,8 @@ with tab2:
             samosas = int(value_data['yearly_value'] / 15.5)
             st.info(f"💡 That's **{samosas:,} samosas**!")
 
-# TAB 3: POISON PROFILE
-with tab3:
+# TAB 4: POISON PROFILE
+with tab4:
     st.markdown("## 🎭 Poison Your Tracking Profile")
     st.markdown("*Confuse trackers by generating fake interests*")
     
@@ -222,8 +260,8 @@ with tab3:
             st.code(script, language='javascript')
             st.warning("⚠️ This will open multiple tabs. Close them after a few seconds!")
 
-# TAB 4: TAKE ACTION
-with tab4:
+# TAB 5: TAKE ACTION
+with tab5:
     st.markdown("## 🛡️ Take Control")
     
     col1, col2 = st.columns(2)
