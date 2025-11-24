@@ -14,28 +14,6 @@ def render_simple_heatmap(db_conn):
     st.markdown("## 📅 When Are You Tracked?")
     
     # Date range picker
-    col1, col2 = st.columns(2)
-    with col1:
-        start_date = st.date_input("From:", value=datetime.now().date() - timedelta(days=90))
-    with col2:
-        end_date = st.date_input("To:", value=datetime.now().date())
-    
-    # Get data
-    cursor = db_conn.cursor()
-    query = """
-        SELECT DATE(timestamp) as date, COUNT(*) as count
-        FROM tracking_events
-        WHERE DATE(timestamp) BETWEEN ? AND ?
-        GROUP BY DATE(timestamp)
-    """
-    cursor.execute(query, (str(start_date), str(end_date)))
-    results = cursor.fetchall()
-    
-    if not results:
-        st.warning("No data in this range")
-        return
-    
-    # Convert to DataFrame
     df = pd.DataFrame(results, columns=['date', 'count'])
     df['date'] = pd.to_datetime(df['date'])
     

@@ -111,9 +111,13 @@ from digital_forensic_surgeon.analytics.data_value_calculator import calculate_f
 db = TrackingDatabase()
 stats = db.get_stats_summary()
 
-# Calculate money
+# Calculate money (with error handling)
 if stats['total_events'] > 0:
-    value_data = calculate_from_database(db.conn)
+    try:
+        value_data = calculate_from_database(db.conn)
+    except Exception as e:
+        st.error(f"⚠️ Error calculating value: {e}")
+        value_data = {'yearly_value': 0, 'monthly_value': 0, 'daily_value': 0, 'top_earners': []}
 else:
     value_data = {'yearly_value': 0, 'monthly_value': 0, 'daily_value': 0, 'top_earners': []}
 
@@ -137,15 +141,19 @@ else:
     start_date = datetime(2024, 1, 1).date()
     end_date = datetime.now().date()
 
-# Query with date filter
-cursor.execute("""
-    SELECT company_name, COUNT(*) as count, AVG(risk_score) as avg_risk, category
-    FROM tracking_events
-    WHERE DATE(timestamp) BETWEEN ? AND ?
-    GROUP BY company_name
-    ORDER BY count DESC
-""", (str(start_date), str(end_date)))
-companies = cursor.fetchall()
+# Query with date filter (with error handling)
+try:
+    cursor.execute("""
+        SELECT company_name, COUNT(*) as count, AVG(risk_score) as avg_risk, category
+        FROM tracking_events
+        WHERE DATE(timestamp) BETWEEN ? AND ?
+        GROUP BY company_name
+        ORDER BY count DESC
+    """, (str(start_date), str(end_date)))
+    companies = cursor.fetchall()
+except Exception as e:
+    st.error(f"⚠️ Error querying data: {e}")
+    companies = []
 
 # Recalculate stats for filtered date range
 cursor.execute("""
@@ -168,6 +176,37 @@ else:
     st.warning("⚡ No tracking data in selected date range. Try expanding the dates.")
     st.stop()
 
+# 🎯 PRIVACY SCORE (NEW!)
+from digital_forensic_surgeon.analytics.privacy_score import PrivacyScoreCalculator
+privacy_calc = PrivacyScoreCalculator()
+privacy = privacy_calc.calculate_score(db.conn)
+
+col1, col2, col3 = st.columns([1, 2, 2])
+
+with col1:
+    st.markdown(f"""
+    <div style='background: linear-gradient(135deg, #1a1a1a, #2d2d2d); padding: 30px; border-radius: 12px; text-align: center;'>
+        <div style='font-size: 48px; margin-bottom: 10px;'>{privacy['emoji']}</div>
+        <div style='font-size: 56px; font-weight: 700; color: #00ff41; margin-bottom: 5px;'>{privacy['score']}</div>
+        <div style='font-size: 24px; font-weight: 600;'>Grade: {privacy['grade']}</div>
+        <div style='color: #888; margin-top: 10px;'>Privacy Score</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("### 📊 Score Breakdown")
+    st.progress(privacy['components']['frequency'] / 100, text=f"Frequency: {privacy['components']['frequency']:.0f}/100")
+    st.progress(privacy['components']['diversity'] / 100, text=f"Tracker Diversity: {privacy['components']['diversity']:.0f}/100")
+    st.progress(privacy['components']['risk'] / 100, text=f"Risk Level: {privacy['components']['risk']:.0f}/100")
+    st.progress(privacy['components']['brokers'] / 100, text=f"Data Brokers: {privacy['components']['brokers']:.0f}/100")
+
+with col3:
+    st.markdown("### 💡 Improvement Tips")
+    for tip in privacy['tips']:
+        st.markdown(f"- {tip}")
+
+st.markdown("---")
+
 # 📅 CALENDAR HEATMAP (SIMPLE VERSION)
 from digital_forensic_surgeon.dashboard.heatmap import render_simple_heatmap
 render_simple_heatmap(db.conn)
@@ -175,21 +214,26 @@ render_simple_heatmap(db.conn)
 st.markdown("---")
 
 # TABS
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["🔴 Live Feed", "🕸️ Network", "📊 Data & Money", "🎭 Poison", "🛡️ Actions"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["🔴 Live Feed", "📅 Timeline", "🕸️ Network", "📊 Data & Money", "🎭 Poison", "🛡️ Actions"])
 
-# TAB 1: LIVE FEED (NEW!)
+# TAB 1: LIVE FEED
 with tab1:
     from digital_forensic_surgeon.dashboard.live_feed import render_live_feed
     render_live_feed()
 
-# TAB 2: INTERACTIVE GRAPH
+# TAB 2: TIMELINE VIEW (NEW!)
 with tab2:
+    from digital_forensic_surgeon.dashboard.timeline_view import render_timeline_view
+    render_timeline_view(db.conn)
+
+# TAB 3: INTERACTIVE GRAPH
+with tab3:
     from digital_forensic_surgeon.dashboard.obsidian_graph import render_interactive_graph
     render_interactive_graph(db.conn)
 
 
-# TAB 3: DATA & MONEY
-with tab3:
+# TAB 4: DATA & MONEY
+with tab4:
     col1, col2 = st.columns([2, 1])
     
     with col1:
@@ -234,8 +278,8 @@ with tab3:
             samosas = int(value_data['yearly_value'] / 15.5)
             st.info(f"💡 That's **{samosas:,} samosas**!")
 
-# TAB 4: POISON PROFILE
-with tab4:
+# TAB 5: POISON PROFILE
+with tab5:
     st.markdown("## 🎭 Poison Your Tracking Profile")
     st.markdown("*Confuse trackers by generating fake interests*")
     
@@ -260,8 +304,8 @@ with tab4:
             st.code(script, language='javascript')
             st.warning("⚠️ This will open multiple tabs. Close them after a few seconds!")
 
-# TAB 5: TAKE ACTION
-with tab5:
+# TAB 6: TAKE ACTION
+with tab6:
     st.markdown("## 🛡️ Take Control")
     
     col1, col2 = st.columns(2)

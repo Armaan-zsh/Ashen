@@ -158,16 +158,20 @@ def render_interactive_graph(db_conn):
     st.markdown("## 🕸️ Your Tracking Network")
     st.markdown("*Interactive graph - hover over nodes for details*")
     
-    # Get company data
-    cursor = db_conn.cursor()
-    cursor.execute("""
-        SELECT company_name, COUNT(*) as count, AVG(risk_score) as avg_risk, category
-        FROM tracking_events
-        GROUP BY company_name
-        ORDER BY count DESC
-        LIMIT 20
-    """)
-    companies = cursor.fetchall()
+    # Get company data (with error handling)
+    try:
+        cursor = db_conn.cursor()
+        cursor.execute("""
+            SELECT company_name, COUNT(*) as count, AVG(risk_score) as avg_risk, category
+            FROM tracking_events
+            GROUP BY company_name
+            ORDER BY count DESC
+            LIMIT 20
+        """)
+        companies = cursor.fetchall()
+    except Exception as e:
+        st.error(f"⚠️ Error loading graph data: {e}")
+        return
     
     if not companies:
         st.warning("No tracking data")

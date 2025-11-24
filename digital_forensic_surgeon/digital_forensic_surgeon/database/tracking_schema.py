@@ -46,22 +46,6 @@ class TrackingDatabase:
             )
         """)
         
-        # Create indexes for fast queries
-        cursor.execute("""
-            CREATE INDEX IF NOT EXISTS idx_timestamp 
-            ON tracking_events(timestamp)
-        """)
-        
-        cursor.execute("""
-            CREATE INDEX IF NOT EXISTS idx_company 
-            ON tracking_events(company_name)
-        """)
-        
-        cursor.execute("""
-            CREATE INDEX IF NOT EXISTS idx_domain 
-            ON tracking_events(domain)
-        """)
-        
         # Sessions table
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS sessions (
@@ -85,6 +69,17 @@ class TrackingDatabase:
                 last_seen TEXT
             )
         """)
+        
+        self.conn.commit()
+        
+        # Add indexes for performance (Week 2 optimization)
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_timestamp ON tracking_events(timestamp)")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_company ON tracking_events(company_name)")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_category ON tracking_events(category)")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_session ON tracking_events(session_id)")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_date ON tracking_events(DATE(timestamp))")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_companies_name ON companies(name)")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_domain ON tracking_events(domain)")
         
         self.conn.commit()
     
@@ -203,31 +198,40 @@ class TrackingDatabase:
         return cursor.fetchall()
     
     def get_stats_summary(self):
-        """Get overall statistics"""
+        """Get overall tracking statistics (with caching)"""
+        from digital_forensic_surgeon.database.query_cache import query_cache
+        
+        # Try cache first
+        cached = query_cache.get("stats_summary", ())
+        if cached:
+            return cached
+        
         cursor = self.conn.cursor()
         
-        # Total events
-        cursor.execute("SELECT COUNT(*) FROM tracking_events")
-        total_events = cursor.fetchone()[0]
+        cursor.execute("""
+            SELECT 
+                COUNT(*) as total_events,
+                COUNT(DISTINCT company_name) as unique_companies,
+                COUNT(DISTINCT session_id) as sessions,
+                MIN(timestamp) as first_seen,
+                MAX(timestamp) as last_seen
+            FROM tracking_events
+        """)
         
-        # Unique companies
-        cursor.execute("SELECT COUNT(*) FROM companies")
-        unique_companies = cursor.fetchone()[0]
+        row = cursor.fetchone()
         
-        # High risk events
-        cursor.execute("SELECT COUNT(*) FROM tracking_events WHERE risk_score >= 8.0")
-        high_risk = cursor.fetchone()[0]
-        
-        # Active sessions
-        cursor.execute("SELECT COUNT(*) FROM sessions WHERE status = 'active'")
-        active_sessions = cursor.fetchone()[0]
-        
-        return {
-            'total_events': total_events,
-            'unique_companies': unique_companies,
-            'high_risk_events': high_risk,
-            'active_sessions': active_sessions
+        result = {
+            'total_events': row[0] or 0,
+            'unique_companies': row[1] or 0,
+            'sessions': row[2] or 0,
+            'first_seen': row[3],
+            'last_seen': row[4]
         }
+        
+        # Cache for 60 seconds
+        query_cache.set("stats_summary", (), result)
+        
+        return result
     
     def close(self):
         """Close database connection"""
