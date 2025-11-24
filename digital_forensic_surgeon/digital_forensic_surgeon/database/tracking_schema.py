@@ -100,11 +100,14 @@ class TrackingDatabase:
     
     def log_tracking_event(self, session_id: int, company_name: str, domain: str,
                           url: str, tracking_type: str, category: str, 
-                          risk_score: float, data_sent: str = None, browser: str = None):
+                          risk_score: float, data_sent: str = None, browser: str = None,
+                          timestamp: str = None):
         """Log a tracking event"""
         cursor = self.conn.cursor()
         
-        timestamp = datetime.now().isoformat()
+        # Use provided timestamp or current time
+        if timestamp is None:
+            timestamp = datetime.now().isoformat()
         
         # Insert event
         cursor.execute("""
