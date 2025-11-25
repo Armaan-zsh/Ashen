@@ -315,6 +315,6 @@ with tab4:
     if st.button("🚀 Get God Tier"):
         st.info("God Tier launching February 2026 - First 500 only!")
 
-# Auto-refresh every 5 seconds
-time.sleep(5)
-st.rerun()
+# Manual refresh button
+if st.button("🔄 Refresh Dashboard"):
+    st.rerun()

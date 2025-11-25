@@ -119,5 +119,53 @@
       "message": "Test Tracker blocked",
       "type": "info"
     }
+  },
+  {
+    "type": "tracker_detected",
+    "timestamp": "2025-11-25T19:39:37.747936",
+    "data": {
+      "name": "Test Tracker",
+      "confidence": 100
+    }
+  },
+  {
+    "type": "stats_updated",
+    "timestamp": "2025-11-25T19:39:37.748442",
+    "data": {
+      "trackers_detected": 1,
+      "trackers_blocked": 0,
+      "unknowns_detected": 0,
+      "contributions_pending": 0,
+      "database_version": 0
+    }
+  },
+  {
+    "type": "tray_notification",
+    "timestamp": "2025-11-25T19:39:37.748442",
+    "data": {
+      "title": "Tracker Detected",
+      "message": "Test Tracker blocked",
+      "type": "info"
+    }
+  },
+  {
+    "type": "stats_updated",
+    "timestamp": "2025-11-25T19:39:37.873656",
+    "data": {
+      "trackers_detected": 2,
+      "trackers_blocked": 0,
+      "unknowns_detected": 0,
+      "contributions_pending": 0,
+      "database_version": 0
+    }
+  },
+  {
+    "type": "tray_notification",
+    "timestamp": "2025-11-25T19:39:37.873656",
+    "data": {
+      "title": "Tracker Detected",
+      "message": "Test Tracker blocked",
+      "type": "info"
+    }
   }
 ]
