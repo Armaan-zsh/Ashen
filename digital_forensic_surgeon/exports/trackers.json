@@ -167,5 +167,78 @@
       "message": "Test Tracker blocked",
       "type": "info"
     }
+  },
+  {
+    "type": "tracker_detected",
+    "timestamp": "2025-11-25T19:41:27.571538",
+    "data": {
+      "name": "Facebook Pixel",
+      "url": "https://facebook.com/tr",
+      "confidence": 100
+    }
+  },
+  {
+    "type": "stats_updated",
+    "timestamp": "2025-11-25T19:41:27.571538",
+    "data": {
+      "trackers_detected": 1,
+      "trackers_blocked": 0,
+      "unknowns_detected": 0,
+      "contributions_pending": 0,
+      "database_version": 0
+    }
+  },
+  {
+    "type": "tray_notification",
+    "timestamp": "2025-11-25T19:41:27.572959",
+    "data": {
+      "title": "Tracker Detected",
+      "message": "Facebook Pixel blocked",
+      "type": "info"
+    }
+  },
+  {
+    "type": "stats_updated",
+    "timestamp": "2025-11-25T19:41:27.698486",
+    "data": {
+      "trackers_detected": 2,
+      "trackers_blocked": 0,
+      "unknowns_detected": 0,
+      "contributions_pending": 0,
+      "database_version": 0
+    }
+  },
+  {
+    "type": "tray_notification",
+    "timestamp": "2025-11-25T19:41:27.699120",
+    "data": {
+      "title": "Tracker Detected",
+      "message": "Facebook Pixel blocked",
+      "type": "info"
+    }
+  },
+  {
+    "type": "unknown_detected",
+    "timestamp": "2025-11-25T19:41:27.773699",
+    "data": {
+      "domain": "tracking.example.com",
+      "confidence": 75
+    }
+  },
+  {
+    "type": "add_contribution",
+    "timestamp": "2025-11-25T19:41:27.773699",
+    "data": {
+      "domain": "tracking.example.com",
+      "confidence": 75
+    }
+  },
+  {
+    "type": "add_contribution",
+    "timestamp": "2025-11-25T19:41:27.818653",
+    "data": {
+      "domain": "tracking.example.com",
+      "confidence": 75
+    }
   }
 ]
