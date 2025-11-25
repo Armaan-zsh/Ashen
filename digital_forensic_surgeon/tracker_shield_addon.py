@@ -34,8 +34,11 @@ class TrackerShieldAddon:
         # Load signature database
         self.matcher = self._load_signatures()
         
-        ctx.log.info(f"🛡️  TrackerShield initialized - Tier: {self.tier.upper()}")
-        ctx.log.info(f"📊 Loaded {len(self.matcher.signatures)} signatures")
+        # Store initialization info for later logging
+        self.init_info = {
+            'tier': self.tier.upper(),
+            'signatures': len(self.matcher.signatures)
+        }
     
     def _validate_license(self, key: str) -> License:
         """Validate license key"""
@@ -45,14 +48,15 @@ class TrackerShieldAddon:
         license = LicenseGenerator.validate_key(key)
         
         if license:
-            ctx.log.info(f"✅ Valid {license.tier} license")
+            # Store validation result for later logging
+            self.license_status = f"Valid {license.tier} license"
             if license.days_remaining():
-                ctx.log.info(f"   Expires in {license.days_remaining()} days")
+                self.license_status += f" - Expires in {license.days_remaining()} days"
             else:
-                ctx.log.info(f"   LIFETIME access")
+                self.license_status += " - LIFETIME access"
             return license
         else:
-            ctx.log.warn(f"❌ Invalid license - using FREE tier")
+            self.license_status = "Invalid license - using FREE tier"
             return License(tier=License.TIER_FREE, email="", expiry=None)
     
     def _load_signatures(self) -> SignatureMatcher:
@@ -62,7 +66,6 @@ class TrackerShieldAddon:
         db_path = Path(f'tracker_shield/data/tracker_shield_{self.tier}.tsdb')
         
         if not db_path.exists():
-            ctx.log.error(f"❌ Database not found: {db_path}")
             raise FileNotFoundError(f"Signature database missing: {db_path}")
         
         signatures = compiler.load_database(db_path)
@@ -70,6 +73,13 @@ class TrackerShieldAddon:
     
     def request(self, flow: http.HTTPFlow):
         """Intercept and analyze requests"""
+        
+        # Log initialization info on first request
+        if self.events_captured == 0:
+            ctx.log.info(f"🛡️  TrackerShield - Tier: {self.init_info['tier']}")
+            ctx.log.info(f"📊 Loaded {self.init_info['signatures']} signatures")
+            if hasattr(self, 'license_status'):
+                ctx.log.info(f"🔑 {self.license_status}")
         
         url = flow.request.pretty_url
         
