@@ -1,0 +1,31 @@
+id: AMAZON_008
+version: 1
+name: Amazon OneTag - wishlist
+company: Amazon
+category: advertising
+risk_score: 7.5
+tier: free
+description: 'Amazon tracking: Wishlist addition'
+patterns:
+- type: domain
+  value: amazon-adsystem.com
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Advertiser ID
+  key: id
+  pii: false
+- type: param
+  name: Page URL
+  key: u
+  pii: true
+references:
+- https://advertising.amazon.com/
+tags:
+- amazon
+- advertising
+- onetag

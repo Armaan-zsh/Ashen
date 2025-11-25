@@ -1,0 +1,61 @@
+# Facebook Pixel - Add to Cart Event
+id: FB_PIXEL_002
+version: 1
+name: Facebook Pixel - Add to Cart
+company: Meta/Facebook
+category: advertising
+risk_score: 9.0
+tier: free
+
+description: |
+  Tracks when users add items to shopping cart.
+  High risk - reveals shopping behavior and purchase intent.
+
+patterns:
+  - type: domain
+    value: facebook.com
+    required: true
+  
+  - type: path
+    value: /tr
+    required: true
+  
+  - type: param_value
+    key: ev
+    value: AddToCart
+    required: true
+
+evidence:
+  - type: param
+    name: Event Type
+    key: ev
+    pii: false
+  
+  - type: param
+    name: Facebook Pixel ID
+    key: id
+    pii: false
+  
+  - type: param
+    name: Product Value
+    key: value
+    pii: false
+  
+  - type: param
+    name: Currency
+    key: currency
+    pii: false
+  
+  - type: param
+    name: Facebook Cookie
+    key: fbp
+    pii: true
+
+references:
+  - https://developers.facebook.com/docs/meta-pixel/reference
+
+tags:
+  - facebook
+  - e-commerce
+  - shopping
+  - conversion

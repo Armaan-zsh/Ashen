@@ -1,0 +1,45 @@
+id: GA4_002
+version: 1
+name: Google Analytics - page_view
+company: Google
+category: analytics
+risk_score: 7.5
+tier: free
+description: GA4 page view
+patterns:
+- type: domain
+  value: google-analytics.com
+  required: true
+- type: path
+  value: /g/collect
+  required: true
+- type: param_key
+  key: v
+  required: true
+- type: param_value
+  key: en
+  value: page_view
+  required: true
+evidence:
+- type: param
+  name: Event Name
+  key: en
+  pii: false
+- type: param
+  name: Client ID
+  key: cid
+  pii: true
+- type: param
+  name: Page URL
+  key: dl
+  pii: true
+- type: param
+  name: Measurement ID
+  key: tid
+  pii: false
+references:
+- https://developers.google.com/analytics
+tags:
+- google
+- analytics
+- ga4

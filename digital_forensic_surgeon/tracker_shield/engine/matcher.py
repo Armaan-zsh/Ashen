@@ -69,18 +69,24 @@ class SignatureMatcher:
     def _get_candidates(self, domain: str) -> List[TrackerSignature]:
         """Get candidate signatures for domain"""
         candidates = []
+        seen_ids = set()
         
         # Exact domain match
         if domain in self.domain_index:
-            candidates.extend(self.domain_index[domain])
+            for sig in self.domain_index[domain]:
+                if sig.id not in seen_ids:
+                    candidates.append(sig)
+                    seen_ids.add(sig.id)
         
         # Partial domain match (e.g., "facebook.com" matches "www.facebook.com")
         for indexed_domain, sigs in self.domain_index.items():
             if indexed_domain in domain or domain in indexed_domain:
-                candidates.extend(sigs)
+                for sig in sigs:
+                    if sig.id not in seen_ids:
+                        candidates.append(sig)
+                        seen_ids.add(sig.id)
         
-        # Remove duplicates
-        return list(set(candidates))
+        return candidates
     
     def _match_signature(self, sig: TrackerSignature, parsed, params, 
                         headers, body) -> Optional[MatchResult]:

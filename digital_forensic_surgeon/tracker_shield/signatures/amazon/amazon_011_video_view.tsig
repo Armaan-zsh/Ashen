@@ -1,0 +1,31 @@
+id: AMAZON_011
+version: 1
+name: Amazon OneTag - video_view
+company: Amazon
+category: advertising
+risk_score: 7.0
+tier: free
+description: 'Amazon tracking: Video watched'
+patterns:
+- type: domain
+  value: amazon-adsystem.com
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Advertiser ID
+  key: id
+  pii: false
+- type: param
+  name: Page URL
+  key: u
+  pii: true
+references:
+- https://advertising.amazon.com/
+tags:
+- amazon
+- advertising
+- onetag

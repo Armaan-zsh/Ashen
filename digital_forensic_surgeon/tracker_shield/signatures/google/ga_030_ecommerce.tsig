@@ -1,0 +1,41 @@
+id: GA_UA_030
+version: 1
+name: Google Analytics - ecommerce
+company: Google
+category: analytics
+risk_score: 8.5
+tier: pro
+description: UA ecommerce
+patterns:
+- type: domain
+  value: google-analytics.com
+  required: true
+- type: path
+  value: /collect
+  required: true
+- type: param_key
+  key: t
+  required: true
+evidence:
+- type: param
+  name: Event Name
+  key: t
+  pii: false
+- type: param
+  name: Client ID
+  key: cid
+  pii: true
+- type: param
+  name: Page URL
+  key: dl
+  pii: true
+- type: param
+  name: Measurement ID
+  key: tid
+  pii: false
+references:
+- https://developers.google.com/analytics
+tags:
+- google
+- analytics
+- universal-analytics

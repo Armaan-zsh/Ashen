@@ -1,0 +1,31 @@
+id: AMAZON_009
+version: 1
+name: Amazon OneTag - checkout
+company: Amazon
+category: advertising
+risk_score: 9.0
+tier: pro
+description: 'Amazon tracking: Checkout started'
+patterns:
+- type: domain
+  value: amazon-adsystem.com
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Advertiser ID
+  key: id
+  pii: false
+- type: param
+  name: Page URL
+  key: u
+  pii: true
+references:
+- https://advertising.amazon.com/
+tags:
+- amazon
+- advertising
+- onetag

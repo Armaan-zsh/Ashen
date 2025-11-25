@@ -1,0 +1,41 @@
+id: GA_UA_028
+version: 1
+name: Google Analytics - timing
+company: Google
+category: analytics
+risk_score: 6.5
+tier: free
+description: UA timing
+patterns:
+- type: domain
+  value: google-analytics.com
+  required: true
+- type: path
+  value: /collect
+  required: true
+- type: param_key
+  key: t
+  required: true
+evidence:
+- type: param
+  name: Event Name
+  key: t
+  pii: false
+- type: param
+  name: Client ID
+  key: cid
+  pii: true
+- type: param
+  name: Page URL
+  key: dl
+  pii: true
+- type: param
+  name: Measurement ID
+  key: tid
+  pii: false
+references:
+- https://developers.google.com/analytics
+tags:
+- google
+- analytics
+- universal-analytics

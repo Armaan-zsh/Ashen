@@ -1,0 +1,48 @@
+# Facebook Pixel - Lead Event
+id: FB_PIXEL_005
+version: 1
+name: Facebook Pixel - Lead
+company: Meta/Facebook
+category: advertising
+risk_score: 9.0
+tier: pro
+
+description: |
+  Tracks lead generation (form submissions, sign-ups).
+  Often contains PII like email, phone, name.
+
+patterns:
+  - type: domain
+    value: facebook.com
+    required: true
+  
+  - type: path
+    value: /tr
+    required: true
+  
+  - type: param_value
+    key: ev
+    value: Lead
+    required: true
+
+evidence:
+  - type: param
+    name: Event Type
+    key: ev
+    pii: false
+  
+  - type: param
+    name: Content Name
+    key: content_name
+    pii: false
+  
+  - type: param
+    name: External ID
+    key: external_id
+    pii: true
+
+tags:
+  - facebook
+  - lead-generation
+  - forms
+  - pii

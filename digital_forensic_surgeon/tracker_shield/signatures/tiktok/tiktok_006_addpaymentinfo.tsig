@@ -1,0 +1,39 @@
+id: TIKTOK_006
+version: 1
+name: TikTok Pixel - AddPaymentInfo
+company: ByteDance/TikTok
+category: advertising
+risk_score: 9.0
+tier: pro
+description: 'TikTok Pixel event: Payment info added'
+patterns:
+- type: domain
+  value: analytics.tiktok.com
+  required: true
+- type: path
+  value: /api/v2/pixel/track
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Pixel Code
+  key: pixel_code
+  pii: false
+- type: param
+  name: TikTok Click ID
+  key: ttclid
+  pii: true
+- type: param
+  name: Page URL
+  key: url
+  pii: true
+references:
+- https://ads.tiktok.com/marketing_api/docs?id=1739585696931842
+tags:
+- tiktok
+- pixel
+- advertising
+- bytedance

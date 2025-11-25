@@ -1,0 +1,62 @@
+# Facebook Pixel - Purchase Event
+id: FB_PIXEL_003
+version: 1
+name: Facebook Pixel - Purchase
+company: Meta/Facebook
+category: advertising
+risk_score: 9.5
+tier: free
+
+description: |
+  Tracks completed purchases. CRITICAL for ad conversion tracking.
+  Leaks purchase amount, products bought, and transaction details.
+
+patterns:
+  - type: domain
+    value: facebook.com
+    required: true
+  
+  - type: path
+    value: /tr
+    required: true
+  
+  - type: param_value
+    key: ev
+    value: Purchase
+    required: true
+
+evidence:
+  - type: param
+    name: Event Type
+    key: ev
+    pii: false
+  
+  - type: param
+    name: Facebook Pixel ID
+    key: id
+    pii: false
+  
+  - type: param
+    name: Purchase Value
+    key: value
+    pii: false
+  
+  - type: param
+    name: Currency
+    key: currency
+    pii: false
+  
+  - type: param
+    name: Transaction ID
+    key: tx
+    pii: true
+
+references:
+  - https://developers.facebook.com/docs/meta-pixel/reference
+
+tags:
+  - facebook
+  - e-commerce
+  - purchase
+  - conversion
+  - high-risk

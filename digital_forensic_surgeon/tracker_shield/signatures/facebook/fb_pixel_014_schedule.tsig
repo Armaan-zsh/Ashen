@@ -1,0 +1,42 @@
+version: 1
+company: Meta/Facebook
+category: advertising
+patterns:
+- type: domain
+  value: facebook.com
+  required: true
+- type: path
+  value: /tr
+  required: true
+- type: param_value
+  key: ev
+  required: true
+  value: Schedule
+evidence:
+- type: param
+  name: Event Type
+  key: ev
+  pii: false
+- type: param
+  name: Facebook Pixel ID
+  key: id
+  pii: false
+- type: param
+  name: Page URL
+  key: dl
+  pii: true
+- type: param
+  name: Facebook Cookie
+  key: fbp
+  pii: true
+references:
+- https://developers.facebook.com/docs/meta-pixel/reference
+tags:
+- facebook
+- pixel
+- conversion
+id: FB_PIXEL_014
+name: Facebook Pixel - Schedule
+risk_score: 7.5
+tier: pro
+description: Tracks Schedule events. Appointment scheduled.

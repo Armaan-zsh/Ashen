@@ -15,7 +15,11 @@ description: |
 
 patterns:
   - type: domain
-    value: google-analytics.com/g/collect
+    value: google-analytics.com
+    required: true
+  
+  - type: path
+    value: /g/collect
     required: true
   
   - type: param_key

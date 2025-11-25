@@ -1,0 +1,36 @@
+id: DOUBLECLICK_012
+version: 1
+name: Google Ads - audience_pixel
+company: Google
+category: advertising
+risk_score: 8.5
+tier: god
+description: 'DoubleClick/Google Ads: Audience building'
+patterns:
+- type: domain
+  value: doubleclick.net
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: type
+  pii: false
+- type: param
+  name: Conversion ID
+  key: id
+  pii: false
+- type: param
+  name: Label
+  key: label
+  pii: false
+- type: cookie
+  name: Google ID Cookie
+  key: IDE
+  pii: true
+references:
+- https://support.google.com/google-ads/
+tags:
+- google
+- doubleclick
+- advertising
+- remarketing

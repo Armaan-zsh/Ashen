@@ -1,0 +1,52 @@
+# Facebook Pixel - View Content
+id: FB_PIXEL_004
+version: 1
+name: Facebook Pixel - View Content
+company: Meta/Facebook
+category: advertising
+risk_score: 8.0
+tier: free
+
+description: |
+  Tracks when users view specific content/products.
+  Builds detailed browsing profile for retargeting.
+
+patterns:
+  - type: domain
+    value: facebook.com
+    required: true
+  
+  - type: path
+    value: /tr
+    required: true
+  
+  - type: param_value
+    key: ev
+    value: ViewContent
+    required: true
+
+evidence:
+  - type: param
+    name: Event Type
+    key: ev
+    pii: false
+  
+  - type: param
+    name: Content Type
+    key: content_type
+    pii: false
+  
+  - type: param
+    name: Content IDs
+    key: content_ids
+    pii: false
+  
+  - type: param
+    name: Page URL
+    key: dl
+    pii: true
+
+tags:
+  - facebook
+  - browsing
+  - retargeting

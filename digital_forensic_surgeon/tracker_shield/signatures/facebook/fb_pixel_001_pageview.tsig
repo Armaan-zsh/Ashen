@@ -15,7 +15,11 @@ description: |
 
 patterns:
   - type: domain
-    value: facebook.com/tr
+    value: facebook.com
+    required: true
+  
+  - type: path
+    value: /tr
     required: true
   
   - type: param_key
