@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrackerShield - The Final Privacy Weapon</title>
+    <title>TrackerShield - Stop Companies From Stealing Your Data</title>
     <meta name="description"
-        content="Stop companies from stealing your data. TrackerShield detects 100+ tracking signatures that other tools miss.">
+        content="Real-time tracker detection. See exactly what data companies are stealing. 100+ tracking signatures decoded.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,23 +18,58 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: #0a0a0a;
-            color: #fff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #ffffff;
+            color: #0a0a0a;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #0a0a0a;
+        }
+
+        .nav-cta {
+            background: #0a0a0a;
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: #ff3b3b;
+            transform: scale(1.02);
+        }
+
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
             position: relative;
-            overflow: hidden;
         }
 
         .hero::before {
@@ -42,176 +80,246 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 0, 0, 0.05) 0%, transparent 50%);
+                linear-gradient(to bottom, transparent 0%, rgba(255, 59, 59, 0.03) 100%);
             pointer-events: none;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
+            text-align: center;
             z-index: 1;
         }
 
+        .badge {
+            display: inline-block;
+            background: #f5f5f5;
+            color: #0a0a0a;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
         h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
             font-weight: 900;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, #ff4444 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: -0.03em;
         }
 
-        .tagline {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            color: #aaa;
+        .highlight {
+            color: #ff3b3b;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: #666;
             margin-bottom: 3rem;
-            font-weight: 300;
+            font-weight: 400;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-            max-width: 600px;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #ff4444;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-buttons {
+        .cta-group {
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 2rem;
+            margin-bottom: 4rem;
         }
 
         .btn {
-            padding: 1.2rem 3rem;
-            font-size: 1.1rem;
-            font-weight: 700;
+            padding: 1.1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s;
             text-decoration: none;
             display: inline-block;
+            font-family: inherit;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+            background: #0a0a0a;
             color: #fff;
-            box-shadow: 0 10px 30px rgba(255, 68, 68, 0.3);
         }
 
         .btn-primary:hover {
+            background: #ff3b3b;
             transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(255, 68, 68, 0.4);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: #0a0a0a;
+            border: 2px solid #e0e0e0;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
+            border-color: #0a0a0a;
         }
 
+        /* Stats */
+        .stats-bar {
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+            padding: 2rem;
+            background: #fafafa;
+            border-radius: 12px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #0a0a0a;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Features */
         .features {
             padding: 6rem 2rem;
-            background: #0f0f0f;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 2rem;
         }
 
-        .feature {
-            background: rgba(255, 255, 255, 0.03);
+        .feature-card {
+            background: #fff;
             padding: 2.5rem;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            border: 2px solid #f0f0f0;
+            transition: all 0.3s;
         }
 
-        .feature:hover {
+        .feature-card:hover {
+            border-color: #ff3b3b;
             transform: translateY(-5px);
-            border-color: rgba(255, 68, 68, 0.3);
-            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature h3 {
+            width: 50px;
+            height: 50px;
+            background: #0a0a0a;
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .feature p {
-            color: #aaa;
-            line-height: 1.8;
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
         }
 
-        .god-tier-teaser {
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* God Tier */
+        .god-tier {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #1a0000 0%, #0a0a0a 100%);
+            background: #0a0a0a;
+            color: #fff;
             text-align: center;
         }
 
-        .god-tier-teaser h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .god-tier h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
         }
 
-        .god-tier-teaser .gold {
+        .gold-text {
             color: #ffd700;
         }
 
-        .countdown {
-            font-size: 1.5rem;
-            color: #888;
+        .god-tier p {
+            font-size: 1.2rem;
+            color: #999;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .god-tier .price {
+            font-size: 3rem;
+            font-weight: 900;
             margin: 2rem 0;
         }
 
-        footer {
-            padding: 3rem 2rem;
-            text-align: center;
+        .god-tier .limited {
+            font-size: 0.9rem;
             color: #666;
-            background: #050505;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            background: #fafafa;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            .stats {
+            .stats-bar {
+                gap: 2rem;
+            }
+
+            .features-grid {
                 grid-template-columns: 1fr;
             }
 
-            .cta-buttons {
+            .cta-group {
                 flex-direction: column;
             }
 
@@ -223,90 +331,105 @@
 </head>
 
 <body>
+    <nav>
+        <div class="logo">TrackerShield</div>
+        <a href="#download" class="nav-cta">Download Beta</a>
+    </nav>
+
     <section class="hero">
         <div class="hero-content">
-            <h1>TrackerShield</h1>
-            <p class="tagline">See exactly what companies are tracking. Stop them in real-time.</p>
+            <span class="badge">🛡️ 100+ Tracking Signatures</span>
+            <h1>
+                Stop Companies From<br>
+                <span class="highlight">Stealing Your Data</span>
+            </h1>
+            <p>
+                See exactly what's being tracked in real-time. Facebook, Google, TikTok, Amazon — all decoded.
+                No guessing. Just proof.
+            </p>
 
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">Signatures</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Trackers</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">3,500</div>
-                    <div class="stat-label">URLs/Second</div>
-                </div>
+            <div class="cta-group">
+                <a href="#download" class="btn btn-primary">Download Free</a>
+                <a href="#features" class="btn btn-secondary">See How It Works</a>
             </div>
 
-            <div class="cta-buttons">
-                <a href="#beta" class="btn btn-primary">Join Beta (FREE)</a>
-                <a href="#features" class="btn btn-secondary">Learn More</a>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Tracking Signatures</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Major Trackers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3,500</span>
+                    <span class="stat-label">URLs/Second</span>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="features" class="features">
+        <div class="section-header">
+            <h2>Not Just Blocking.<br>Complete Detection.</h2>
+            <p>Other tools block domains. We decode payloads and show you the evidence.</p>
+        </div>
+
         <div class="features-grid">
-            <div class="feature">
-                <div class="feature-icon">🛡️</div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
                 <h3>Signature-Based Detection</h3>
-                <p>Not just domain blocking. We decode actual tracking payloads and extract evidence. 100+ hand-crafted
-                    signatures.</p>
+                <p>100+ hand-crafted signatures that identify tracking by analyzing the actual data being sent, not just
+                    the URL.</p>
             </div>
 
-            <div class="feature">
+            <div class="feature-card">
                 <div class="feature-icon">⚡</div>
-                <h3>Blazing Fast</h3>
-                <p>3,500+ URLs per second. Encrypted local database. No cloud calls. Zero lag.</p>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <h3>Privacy First</h3>
-                <p>Everything runs locally. No telemetry. No accounts required for free tier. Your data stays yours.</p>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">📊</div>
                 <h3>Real-Time Analysis</h3>
-                <p>Live dashboard showing exactly what data is being leaked. See the evidence with your own eyes.</p>
+                <p>Watch tracking happen live. See exactly what data leaks as you browse. 3,500+ URLs analyzed per
+                    second.</p>
             </div>
 
-            <div class="feature">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Runs Locally</h3>
+                <p>Everything processed on your machine. No cloud. No accounts. Your data never leaves your computer.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Evidence Extraction</h3>
+                <p>Don't just know you're being tracked — see the exact data being stolen. URLs, IDs, cookies, behavior
+                    patterns.</p>
+            </div>
+
+            <div class="feature-card">
                 <div class="feature-icon">🎯</div>
-                <h3>5 Major Trackers</h3>
-                <p>Facebook Pixel, Google Analytics, TikTok Pixel, Amazon OneTag, DoubleClick - all decoded in
-                    real-time.</p>
+                <h3>5 Major Platforms</h3>
+                <p>Facebook Pixel, Google Analytics, TikTok Pixel, Amazon OneTag, DoubleClick — all completely decoded.
+                </p>
             </div>
 
-            <div class="feature">
+            <div class="feature-card">
                 <div class="feature-icon">🚀</div>
-                <h3>Growing Database</h3>
-                <p>More signatures every month. Pro users get daily updates. God Tier gets exclusive pre-release
-                    signatures.</p>
+                <h3>Always Growing</h3>
+                <p>New signatures added monthly. Pro users get daily updates. God Tier gets exclusive pre-release
+                    access.</p>
             </div>
         </div>
     </section>
 
-    <section class="god-tier-teaser">
-        <h2>Privacy <span class="gold">Immortal</span></h2>
-        <p style="font-size: 1.3rem; color: #aaa; max-width: 600px; margin: 0 auto;">
-            Be one of the first 500 people on Earth to own lifetime access.
-        </p>
-        <p class="countdown">Launching February 2026</p>
-        <p style="color: #666; font-size: 0.9rem;">$999 lifetime • First 500 only • Never available again</p>
+    <section class="god-tier">
+        <h2>Privacy <span class="gold-text">Immortal</span></h2>
+        <p>Be one of the first 500 people on Earth to own lifetime access to every signature, forever.</p>
+        <div class="price">$999</div>
+        <p class="limited">First 500 Only • Launching February 2026</p>
     </section>
 
     <footer>
-        <p>TrackerShield &copy; 2025-2026 | Built with love for privacy</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">
-            The final weapon against tracking. Not another privacy tool.
-        </p>
+        <p>&copy; 2025 TrackerShield. The final weapon against tracking.</p>
     </footer>
 </body>
 
