@@ -1,0 +1,13 @@
+syntax: glob
+
+digital_forensic_surgeon/venv/
+__pycache__/
+*.pyc
+*.so
+*.egg-info/
+*.dll
+*.pyd
+
+digital_forensic_surgeon/venv/
+*.pyc
+__pycache__/

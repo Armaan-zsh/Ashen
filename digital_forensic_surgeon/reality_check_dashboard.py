@@ -332,6 +332,12 @@ with tab6:
     with col2:
         st.markdown("### 📊 Export Data")
         
+        # PDF Export (NEW!)
+        from digital_forensic_surgeon.export.pdf_generator import create_export_button
+        create_export_button(db.conn, privacy)
+        
+        st.markdown("---")
+        
         if st.button("Export All Data as CSV", use_container_width=True):
             cursor.execute("SELECT * FROM tracking_events")
             all_data = cursor.fetchall()

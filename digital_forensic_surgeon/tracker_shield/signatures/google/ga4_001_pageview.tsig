@@ -1,0 +1,75 @@
+# Google Analytics 4 - Page View
+# Signature ID: GA4_001
+
+id: GA4_001
+version: 1
+name: Google Analytics 4 - Page View
+company: Google
+category: analytics
+risk_score: 7.5
+tier: free
+
+description: |
+  Google Analytics 4 page view tracking.
+  Collects detailed page metrics, user behavior, and session data.
+
+patterns:
+  - type: domain
+    value: google-analytics.com/g/collect
+    required: true
+  
+  - type: param_key
+    key: v
+    required: true
+  
+  - type: param_value
+    key: en
+    value: page_view
+    required: true
+
+evidence:
+  - type: param
+    name: Event Name
+    key: en
+    pii: false
+  
+  - type: param
+    name: Measurement ID
+    key: tid
+    pii: false
+  
+  - type: param
+    name: Client ID
+    key: cid
+    pii: true
+  
+  - type: param
+    name: Session ID
+    key: sid
+    pii: true
+  
+  - type: param
+    name: Page Location
+    key: dl
+    pii: true
+  
+  - type: param
+    name: Page Title
+    key: dt
+    pii: true
+  
+  - type: param
+    name: User Agent
+    key: uaa
+    pii: false
+
+references:
+  - https://developers.google.com/analytics/devguides/collection/ga4
+  - https://support.google.com/analytics/answer/9304153
+
+tags:
+  - google
+  - analytics
+  - ga4
+  - metrics
+  - tracking

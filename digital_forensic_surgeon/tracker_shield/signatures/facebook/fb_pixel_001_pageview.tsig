@@ -1,0 +1,70 @@
+# Facebook Pixel - Page View Event
+# Signature ID: FB_PIXEL_001
+
+id: FB_PIXEL_001
+version: 1
+name: Facebook Pixel - Page View
+company: Meta/Facebook
+category: advertising
+risk_score: 8.5
+tier: free
+
+description: |
+  Facebook Pixel tracks page views and user behavior for advertising.
+  Sends detailed browsing data including URL, referrer, and user identifiers.
+
+patterns:
+  - type: domain
+    value: facebook.com/tr
+    required: true
+  
+  - type: param_key
+    key: ev
+    required: true
+  
+  - type: param_value
+    key: ev
+    value: PageView
+    required: true
+
+evidence:
+  - type: param
+    name: Event Type
+    key: ev
+    pii: false
+  
+  - type: param
+    name: Facebook Pixel ID
+    key: id
+    pii: false
+  
+  - type: param
+    name: Page URL
+    key: dl
+    pii: true
+  
+  - type: param
+    name: Referrer URL
+    key: rl
+    pii: true
+  
+  - type: param
+    name: Facebook Cookie
+    key: fbp
+    pii: true
+  
+  - type: param
+    name: External User ID
+    key: external_id
+    pii: true
+
+references:
+  - https://developers.facebook.com/docs/meta-pixel/
+  - https://business.facebook.com/business/help/742478679120153
+
+tags:
+  - facebook
+  - meta
+  - pixel
+  - advertising
+  - retargeting
