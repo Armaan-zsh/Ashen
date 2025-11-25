@@ -1,0 +1,123 @@
+[
+  {
+    "type": "tracker_detected",
+    "timestamp": "2025-11-25T19:20:43.320064",
+    "data": {
+      "name": "Facebook Pixel",
+      "url": "https://facebook.com/tr",
+      "confidence": 100
+    }
+  },
+  {
+    "type": "stats_updated",
+    "timestamp": "2025-11-25T19:20:43.322702",
+    "data": {
+      "trackers_detected": 1,
+      "trackers_blocked": 0,
+      "unknowns_detected": 0,
+      "contributions_pending": 0,
+      "database_version": 0
+    }
+  },
+  {
+    "type": "tray_notification",
+    "timestamp": "2025-11-25T19:20:43.324665",
+    "data": {
+      "title": "Tracker Detected",
+      "message": "Facebook Pixel blocked",
+      "type": "info"
+    }
+  },
+  {
+    "type": "stats_updated",
+    "timestamp": "2025-11-25T19:20:43.477005",
+    "data": {
+      "trackers_detected": 2,
+      "trackers_blocked": 0,
+      "unknowns_detected": 0,
+      "contributions_pending": 0,
+      "database_version": 0
+    }
+  },
+  {
+    "type": "tray_notification",
+    "timestamp": "2025-11-25T19:20:43.484230",
+    "data": {
+      "title": "Tracker Detected",
+      "message": "Facebook Pixel blocked",
+      "type": "info"
+    }
+  },
+  {
+    "type": "unknown_detected",
+    "timestamp": "2025-11-25T19:20:43.527787",
+    "data": {
+      "domain": "tracking.example.com",
+      "confidence": 75
+    }
+  },
+  {
+    "type": "add_contribution",
+    "timestamp": "2025-11-25T19:20:43.527787",
+    "data": {
+      "domain": "tracking.example.com",
+      "confidence": 75
+    }
+  },
+  {
+    "type": "add_contribution",
+    "timestamp": "2025-11-25T19:20:43.615185",
+    "data": {
+      "domain": "tracking.example.com",
+      "confidence": 75
+    }
+  },
+  {
+    "type": "tracker_detected",
+    "timestamp": "2025-11-25T19:21:02.765312",
+    "data": {
+      "name": "Test Tracker",
+      "confidence": 100
+    }
+  },
+  {
+    "type": "stats_updated",
+    "timestamp": "2025-11-25T19:21:02.765909",
+    "data": {
+      "trackers_detected": 1,
+      "trackers_blocked": 0,
+      "unknowns_detected": 0,
+      "contributions_pending": 0,
+      "database_version": 0
+    }
+  },
+  {
+    "type": "tray_notification",
+    "timestamp": "2025-11-25T19:21:02.765909",
+    "data": {
+      "title": "Tracker Detected",
+      "message": "Test Tracker blocked",
+      "type": "info"
+    }
+  },
+  {
+    "type": "stats_updated",
+    "timestamp": "2025-11-25T19:21:02.896950",
+    "data": {
+      "trackers_detected": 2,
+      "trackers_blocked": 0,
+      "unknowns_detected": 0,
+      "contributions_pending": 0,
+      "database_version": 0
+    }
+  },
+  {
+    "type": "tray_notification",
+    "timestamp": "2025-11-25T19:21:02.899851",
+    "data": {
+      "title": "Tracker Detected",
+      "message": "Test Tracker blocked",
+      "type": "info"
+    }
+  }
+]

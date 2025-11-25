@@ -1,0 +1,3 @@
+timestamp,type,data_name,data_url,data_confidence
+2025-11-25T19:20:43.320064,tracker_detected,Facebook Pixel,https://facebook.com/tr,100
+2025-11-25T19:21:02.765312,tracker_detected,Test Tracker,,100
