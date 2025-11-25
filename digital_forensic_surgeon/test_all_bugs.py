@@ -55,20 +55,20 @@ def test_all_components():
     # Test 3: License System
     print("\n3️⃣  Testing License System...")
     try:
-        from tracker_shield.license.validator import LicenseGenerator, License
+        from tracker_shield.license.validator import SimpleLicenseValidator, License
         
         # Generate keys
-        god_key = LicenseGenerator.generate_key("test@test.com", "god", None)
-        pro_key = LicenseGenerator.generate_key("test@test.com", "pro", 12)
+        god_key = SimpleLicenseValidator.generate_key("god")
+        pro_key = SimpleLicenseValidator.generate_key("pro", 12)
         
         # Validate
-        god_license = LicenseGenerator.validate_key(god_key)
-        pro_license = LicenseGenerator.validate_key(pro_key)
+        god_license = SimpleLicenseValidator.validate_key(god_key)
+        pro_license = SimpleLicenseValidator.validate_key(pro_key)
         
         if god_license and pro_license:
             print(f"   ✅ License system works")
-            print(f"      God: {god_key[:20]}...")
-            print(f"      Pro: {pro_key[:20]}...")
+            print(f"      God: {god_key}")
+            print(f"      Pro: {pro_key}")
             passed += 1
         else:
             print(f"   ❌ FAILED: License validation broken")

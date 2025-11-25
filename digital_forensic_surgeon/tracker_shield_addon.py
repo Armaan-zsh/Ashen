@@ -11,7 +11,7 @@ from urllib.parse import urlparse
 
 from tracker_shield.compiler.sig_compiler import SignatureCompiler
 from tracker_shield.engine.matcher import SignatureMatcher
-from tracker_shield.license.validator import LicenseGenerator, License
+from tracker_shield.license.validator import SimpleLicenseValidator, License
 
 class TrackerShieldAddon:
     """TrackerShield signature-based interceptor"""
@@ -43,9 +43,9 @@ class TrackerShieldAddon:
     def _validate_license(self, key: str) -> License:
         """Validate license key"""
         if not key:
-            return License(tier=License.TIER_FREE, email="", expiry=None)
+            return License(tier=License.TIER_FREE, expiry=None)
         
-        license = LicenseGenerator.validate_key(key)
+        license = SimpleLicenseValidator.validate_key(key)
         
         if license:
             # Store validation result for later logging
@@ -57,7 +57,7 @@ class TrackerShieldAddon:
             return license
         else:
             self.license_status = "Invalid license - using FREE tier"
-            return License(tier=License.TIER_FREE, email="", expiry=None)
+            return License(tier=License.TIER_FREE, expiry=None)
     
     def _load_signatures(self) -> SignatureMatcher:
         """Load signature database for current tier"""
