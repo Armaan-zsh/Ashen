@@ -1,0 +1,30 @@
+id: LINKEDIN_005
+version: 1
+name: Linkedin - Download
+company: Linkedin
+category: advertising
+risk_score: 8.0
+tier: pro
+description: 'Linkedin tracking: Download'
+patterns:
+- type: domain
+  value: px.ads.linkedin.com
+  required: true
+- type: path
+  value: /collect
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Page URL
+  key: url
+  pii: true
+references:
+- https://linkedin.com/developers
+tags:
+- linkedin
+- pixel
+- tracking

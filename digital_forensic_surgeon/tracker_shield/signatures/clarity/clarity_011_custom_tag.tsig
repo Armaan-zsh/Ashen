@@ -1,0 +1,30 @@
+id: CLARITY_011
+version: 1
+name: Clarity - custom_tag
+company: Clarity
+category: analytics
+risk_score: 7.0
+tier: free
+description: 'Clarity tracking: Custom tag'
+patterns:
+- type: domain
+  value: clarity.ms
+  required: true
+- type: path
+  value: /collect
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Page URL
+  key: url
+  pii: true
+references:
+- https://clarity.com/developers
+tags:
+- clarity
+- pixel
+- tracking

@@ -1,0 +1,30 @@
+id: TWITTER_004
+version: 1
+name: Twitter - InitiateCheckout
+company: Twitter
+category: advertising
+risk_score: 8.5
+tier: pro
+description: 'Twitter tracking: Checkout started'
+patterns:
+- type: domain
+  value: analytics.twitter.com
+  required: true
+- type: path
+  value: /i/adsct
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Page URL
+  key: url
+  pii: true
+references:
+- https://twitter.com/developers
+tags:
+- twitter
+- pixel
+- tracking

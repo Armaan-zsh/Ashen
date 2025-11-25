@@ -1,0 +1,30 @@
+id: SNAPCHAT_007
+version: 1
+name: Snapchat - ADD_TO_WISHLIST
+company: Snapchat
+category: advertising
+risk_score: 7.0
+tier: free
+description: 'Snapchat tracking: Wishlist'
+patterns:
+- type: domain
+  value: tr.snapchat.com
+  required: true
+- type: path
+  value: /cm/i
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Page URL
+  key: url
+  pii: true
+references:
+- https://snapchat.com/developers
+tags:
+- snapchat
+- pixel
+- tracking

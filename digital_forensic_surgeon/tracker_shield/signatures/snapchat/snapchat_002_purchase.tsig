@@ -1,0 +1,30 @@
+id: SNAPCHAT_002
+version: 1
+name: Snapchat - PURCHASE
+company: Snapchat
+category: advertising
+risk_score: 9.5
+tier: pro
+description: 'Snapchat tracking: Purchase'
+patterns:
+- type: domain
+  value: tr.snapchat.com
+  required: true
+- type: path
+  value: /cm/i
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Page URL
+  key: url
+  pii: true
+references:
+- https://snapchat.com/developers
+tags:
+- snapchat
+- pixel
+- tracking

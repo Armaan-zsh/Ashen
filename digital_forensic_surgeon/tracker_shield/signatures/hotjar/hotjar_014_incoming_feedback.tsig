@@ -1,0 +1,30 @@
+id: HOTJAR_014
+version: 1
+name: Hotjar - incoming_feedback
+company: Hotjar
+category: analytics
+risk_score: 8.0
+tier: pro
+description: 'Hotjar tracking: Incoming feedback'
+patterns:
+- type: domain
+  value: insights.hotjar.com
+  required: true
+- type: path
+  value: /track
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Page URL
+  key: url
+  pii: true
+references:
+- https://hotjar.com/developers
+tags:
+- hotjar
+- pixel
+- tracking

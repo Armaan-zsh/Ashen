@@ -1,0 +1,30 @@
+id: HOTJAR_003
+version: 1
+name: Hotjar - scroll_depth
+company: Hotjar
+category: analytics
+risk_score: 7.0
+tier: free
+description: 'Hotjar tracking: Scroll tracking'
+patterns:
+- type: domain
+  value: insights.hotjar.com
+  required: true
+- type: path
+  value: /track
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Page URL
+  key: url
+  pii: true
+references:
+- https://hotjar.com/developers
+tags:
+- hotjar
+- pixel
+- tracking

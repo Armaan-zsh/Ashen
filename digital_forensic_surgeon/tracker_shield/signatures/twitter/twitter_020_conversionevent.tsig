@@ -1,0 +1,30 @@
+id: TWITTER_020
+version: 1
+name: Twitter - ConversionEvent
+company: Twitter
+category: advertising
+risk_score: 9.0
+tier: god
+description: 'Twitter tracking: Custom conversion'
+patterns:
+- type: domain
+  value: analytics.twitter.com
+  required: true
+- type: path
+  value: /i/adsct
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Page URL
+  key: url
+  pii: true
+references:
+- https://twitter.com/developers
+tags:
+- twitter
+- pixel
+- tracking

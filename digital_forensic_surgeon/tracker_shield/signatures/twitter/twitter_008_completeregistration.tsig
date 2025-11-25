@@ -1,0 +1,30 @@
+id: TWITTER_008
+version: 1
+name: Twitter - CompleteRegistration
+company: Twitter
+category: advertising
+risk_score: 8.5
+tier: pro
+description: 'Twitter tracking: Sign up'
+patterns:
+- type: domain
+  value: analytics.twitter.com
+  required: true
+- type: path
+  value: /i/adsct
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Page URL
+  key: url
+  pii: true
+references:
+- https://twitter.com/developers
+tags:
+- twitter
+- pixel
+- tracking

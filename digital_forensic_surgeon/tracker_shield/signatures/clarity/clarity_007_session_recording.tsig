@@ -1,0 +1,30 @@
+id: CLARITY_007
+version: 1
+name: Clarity - session_recording
+company: Clarity
+category: analytics
+risk_score: 8.5
+tier: god
+description: 'Clarity tracking: Session replay'
+patterns:
+- type: domain
+  value: clarity.ms
+  required: true
+- type: path
+  value: /collect
+  required: true
+evidence:
+- type: param
+  name: Event Type
+  key: event
+  pii: false
+- type: param
+  name: Page URL
+  key: url
+  pii: true
+references:
+- https://clarity.com/developers
+tags:
+- clarity
+- pixel
+- tracking
