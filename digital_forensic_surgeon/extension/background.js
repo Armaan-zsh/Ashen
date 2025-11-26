@@ -1,18 +1,21 @@
-// TrackerShield Background Script V2
-// NOW WITH BLOCKING + PER-SITE STATS
+// TrackerShield V3 Background Script
+// WITH: Payload decoding + Economic calculator
 
 let signatures = [];
 let todayBlocked = 0;
 let totalBlocked = 0;
 let detectionLog = [];
-let siteStats = {}; // Per-site tracking stats
-let blockingEnabled = true; // Global toggle
+let siteStats = {};
+let blockingEnabled = true;
+let totalEarned = 0; // NEW: Economic tracker
 
-// Load signatures when extension starts
+// Load signatures and decoder
 loadSignatures();
 loadSettings();
 
-// Load signatures from JSON
+// Import decoder (for module)
+importScripts('decoder.js');
+
 async function loadSignatures() {
   try {
     const url = chrome.runtime.getURL('signatures.json');
@@ -25,15 +28,14 @@ async function loadSignatures() {
   }
 }
 
-// Load user settings
 async function loadSettings() {
-  chrome.storage.local.get(['blockingEnabled', 'siteStats'], (result) => {
-    blockingEnabled = result.blockingEnabled !== false; // Default true
+  chrome.storage.local.get(['blockingEnabled', 'siteStats', 'totalEarned'], (result) => {
+    blockingEnabled = result.blockingEnabled !== false;
     siteStats = result.siteStats || {};
+    totalEarned = result.totalEarned || 0;
   });
 }
 
-// Extract domain from URL
 function getDomain(url) {
   try {
     const urlObj = new URL(url);
@@ -43,7 +45,6 @@ function getDomain(url) {
   }
 }
 
-// Match URL against signatures
 function matchSignatures(url) {
   const matches = [];
 
@@ -53,14 +54,13 @@ function matchSignatures(url) {
     for (const pattern of sig.patterns) {
       if (!pattern.value) continue;
 
-      // Simple contains match
       if (url.toLowerCase().includes(pattern.value.toLowerCase())) {
         matches.push({
           name: sig.name,
           company: sig.company,
           category: sig.category,
           risk_score: sig.risk_score,
-          data_collected: getDataCollected(sig) // NEW: What data is collected
+          data_collected: getDataCollected(sig)
         });
         break;
       }
@@ -70,7 +70,6 @@ function matchSignatures(url) {
   return matches;
 }
 
-// Get what data this tracker collects (REAL data based on category)
 function getDataCollected(sig) {
   const dataTypes = {
     'advertising': ['Page views', 'Clicks', 'Purchase intent', 'Shopping cart', 'Device info'],
@@ -82,36 +81,46 @@ function getDataCollected(sig) {
   return dataTypes[sig.category] || ['User data', 'Activity tracking'];
 }
 
-// Listen to ALL web requests
+// Listen to web requests
 chrome.webRequest.onBeforeRequest.addListener(
   (details) => {
     const url = details.url;
     const tabId = details.tabId;
 
-    // Skip extension URLs
     if (url.startsWith('chrome-extension://')) return;
 
-    // Check for trackers
+    // NEW: Decode payload
+    const decoded = PayloadDecoder.decode(url);
+
+    // Match signatures
     const matches = matchSignatures(url);
 
     if (matches.length > 0) {
-      // Get the current tab's URL to track per-site stats
+      // Calculate economic value
+      const eventValue = decoded ?
+        PayloadDecoder.calculateValue(decoded.event) :
+        0.15; // Default pageview value
+
+      totalEarned += eventValue;
+
+      // Get current tab
       chrome.tabs.get(tabId, (tab) => {
         if (chrome.runtime.lastError || !tab) return;
 
         const siteDomain = getDomain(tab.url);
 
-        // Update per-site stats
+        // Update site stats
         if (!siteStats[siteDomain]) {
           siteStats[siteDomain] = {
             count: 0,
+            earned: 0,
             trackers: {}
           };
         }
 
         siteStats[siteDomain].count++;
+        siteStats[siteDomain].earned += eventValue;
 
-        // Track which companies track this site
         for (const match of matches) {
           if (!siteStats[siteDomain].trackers[match.company]) {
             siteStats[siteDomain].trackers[match.company] = 0;
@@ -119,11 +128,10 @@ chrome.webRequest.onBeforeRequest.addListener(
           siteStats[siteDomain].trackers[match.company]++;
         }
 
-        // Save site stats
         chrome.storage.local.set({ siteStats });
       });
 
-      // Update detection stats
+      // Update counters
       todayBlocked++;
       totalBlocked++;
 
@@ -131,64 +139,68 @@ chrome.webRequest.onBeforeRequest.addListener(
         timestamp: Date.now(),
         url: url,
         trackers: matches,
+        decoded: decoded,
+        value: eventValue,
         tabId: tabId
       };
 
       detectionLog.unshift(detection);
       if (detectionLog.length > 100) detectionLog.pop();
 
-      // Save to storage
+      // Save
       chrome.storage.local.set({
         totalBlocked,
         todayBlocked,
-        detectionLog
+        detectionLog,
+        totalEarned
       });
 
       // Update badge
       chrome.action.setBadgeText({
         text: todayBlocked.toString()
       });
-      chrome.action.setBadgeBackgroundColor({
-        // Color based on risk
-        color: matches[0].risk_score >= 8 ? '#ff0000' : '#ff3b3b'
-      });
 
-      console.log('🚫 Detected:', matches[0].company, 'Risk:', matches[0].risk_score);
+      const badgeColor = matches[0].risk_score >= 8 ? '#ff0000' : '#ff3b3b';
+      chrome.action.setBadgeBackgroundColor({ color: badgeColor });
+
+      console.log('🛡️ Detected:', matches[0].company,
+        '| Value: ₹' + eventValue.toFixed(2),
+        decoded ? '| Decoded: ' + decoded.decoded : '');
     }
   },
   { urls: ['<all_urls>'] }
 );
 
-// BLOCKING: Actually block tracker requests
+// BLOCKING (if enabled)
 chrome.webRequest.onBeforeRequest.addListener(
   (details) => {
-    const url = details.url;
-
-    // Skip extension URLs
-    if (url.startsWith('chrome-extension://')) return;
-
-    // Check if blocking enabled
     if (!blockingEnabled) return;
+    if (details.url.startsWith('chrome-extension://')) return;
 
-    // Check for trackers
-    const matches = matchSignatures(url);
+    const matches = matchSignatures(details.url);
 
     if (matches.length > 0 && matches[0].risk_score >= 7) {
-      // Block high-risk trackers (7+)
-      console.log('⛔ BLOCKED:', matches[0].company, url.substring(0, 50));
+      console.log('⛔ BLOCKED:', matches[0].company);
       return { cancel: true };
     }
   },
   { urls: ['<all_urls>'] },
-  ['blocking'] // Enable blocking
+  ['blocking']
 );
 
-// Load saved data on startup
-chrome.storage.local.get(['totalBlocked', 'todayBlocked', 'detectionLog', 'blockingEnabled'], (result) => {
+// Load saved data
+chrome.storage.local.get([
+  'totalBlocked',
+  'todayBlocked',
+  'detectionLog',
+  'blockingEnabled',
+  'totalEarned'
+], (result) => {
   totalBlocked = result.totalBlocked || 0;
   todayBlocked = result.todayBlocked || 0;
   detectionLog = result.detectionLog || [];
   blockingEnabled = result.blockingEnabled !== false;
+  totalEarned = result.totalEarned || 0;
 
   if (todayBlocked > 0) {
     chrome.action.setBadgeText({ text: todayBlocked.toString() });
@@ -196,7 +208,7 @@ chrome.storage.local.get(['totalBlocked', 'todayBlocked', 'detectionLog', 'block
   }
 });
 
-// Reset daily count at midnight
+// Reset daily at midnight
 function resetDaily() {
   const now = new Date();
   const tomorrow = new Date(now);

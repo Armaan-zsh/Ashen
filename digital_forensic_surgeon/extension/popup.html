@@ -252,34 +252,6 @@
     }
 
     .detection-name {
-      font-size: 12px;
-      opacity: 0.8;
-      margin-bottom: 6px;
-    }
-
-    .data-collected {
-      font-size: 11px;
-      opacity: 0.7;
-      background: rgba(255, 59, 59, 0.1);
-      padding: 6px 8px;
-      border-radius: 6px;
-      margin: 6px 0;
-    }
-
-    .data-collected strong {
-      color: #ff3b3b;
-    }
-
-    .detection-time {
-      font-size: 10px;
-      opacity: 0.5;
-      margin-top: 6px;
-    }
-
-    /* Top Sites */
-    .site-stat {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 10px;
       border-radius: 8px;
       margin-bottom: 8px;
       border-left: 3px solid #ffaa00;
@@ -363,27 +335,6 @@
     <h3>Privacy Score</h3>
     <div class="score-display">
       <div class="score-number" id="privacyScore">0</div>
-      <div class="score-grade" id="privacyGrade">F</div>
-    </div>
-    <div class="score-label">Based on real tracking activity</div>
-  </div>
-
-  <!-- Stats Grid -->
-  <div class="stats-grid">
-    <div class="stat-card">
-      <div class="stat-value" id="todayCount">0</div>
-      <div class="stat-label">Blocked Today</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value" id="totalCount">0</div>
-      <div class="stat-label">Total Blocked</div>
-    </div>
-  </div>
-
-  <!-- Blocking Toggle -->
-  <div class="blocking-control">
-    <div>
-      <div class="blocking-label">🛡️ Active Protection</div>
       <div class="blocking-status" id="blockingStatus">Active</div>
     </div>
     <label class="toggle-switch">

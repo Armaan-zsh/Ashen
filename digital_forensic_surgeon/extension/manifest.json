@@ -1,19 +1,33 @@
 {
   "manifest_version": 3,
-  "name": "TrackerShield",
-  "version": "1.0.0",
-  "description": "See which companies track you in real-time. No proxy needed.",
+  "name": "TrackerShield V3 - Privacy Weapon",
+  "version": "3.0.0",
+  "description": "Legal anti-tracking: Fingerprint chaos + Payload decoder + Economic warfare",
   "permissions": [
     "webRequest",
     "storage",
-    "tabs"
+    "tabs",
+    "scripting"
   ],
   "host_permissions": [
     "<all_urls>"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "chaos.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
   "action": {
     "default_popup": "popup.html"
   }
