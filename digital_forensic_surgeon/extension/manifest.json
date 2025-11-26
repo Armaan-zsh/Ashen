@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "TrackerShield V3 - Privacy Weapon",
+  "name": "TrackerShield V3",
   "version": "3.0.0",
-  "description": "Legal anti-tracking: Fingerprint chaos + Payload decoder + Economic warfare",
+  "description": "Privacy weapon: Fingerprint chaos + Tracker decoder",
   "permissions": [
     "webRequest",
     "storage",
@@ -13,8 +13,7 @@
     "<all_urls>"
   ],
   "background": {
-    "service_worker": "background.js",
-    "type": "module"
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {

@@ -13,8 +13,38 @@ let totalEarned = 0; // NEW: Economic tracker
 loadSignatures();
 loadSettings();
 
-// Import decoder (for module)
-importScripts('decoder.js');
+// Payload Decoder (inline since importScripts doesn't work in Manifest V3)
+const PayloadDecoder = {
+  decodeFacebookPixel(url) {
+    try {
+      const urlObj = new URL(url);
+      const params = urlObj.searchParams;
+      return {
+        company: 'Facebook/Meta',
+        event: params.get('ev') || 'PageView',
+        decoded: `Tracking: ${params.get('ev') || 'PageView'} event`
+      };
+    } catch (e) {
+      return null;
+    }
+  },
+
+  decode(url) {
+    if (url.includes('facebook.com/tr')) {
+      return this.decodeFacebookPixel(url);
+    }
+    return null;
+  },
+
+  calculateValue(event) {
+    const VALUES = {
+      'PageView': 0.15,
+      'AddToCart': 1.50,
+      'Purchase': 5.00
+    };
+    return VALUES[event] || 0.10;
+  }
+};
 
 async function loadSignatures() {
   try {
