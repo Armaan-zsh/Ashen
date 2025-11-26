@@ -80,13 +80,18 @@ def get_tracking_data(conn):
     
     query = """
         SELECT 
-            timestamp,
+            datetime(timestamp/1000, 'unixepoch') as timestamp,
             company,
             tracker_type,
-            risk_level,
+            CASE 
+                WHEN risk_score >= 8 THEN 'high'
+                WHEN risk_score >= 5 THEN 'medium'
+                ELSE 'low'
+            END as risk_level,
             url,
-            data_collected
+            evidence_json as data_collected
         FROM tracking_events
+        WHERE timestamp <= strftime('%s', 'now') * 1000
         ORDER BY timestamp DESC
         LIMIT 1000
     """
@@ -95,7 +100,8 @@ def get_tracking_data(conn):
         df = pd.DataFrame(conn.execute(query).fetchall(),
                          columns=['timestamp', 'company', 'tracker_type', 'risk_level', 'url', 'data_collected'])
         return df
-    except:
+    except Exception as e:
+        print(f"Error loading data: {e}")
         return pd.DataFrame()
 
 # Calculate privacy score
