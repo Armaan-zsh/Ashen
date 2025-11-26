@@ -207,9 +207,11 @@ with col3:
 
 st.markdown("---")
 
-# 📅 CALENDAR HEATMAP (SIMPLE VERSION)
-from digital_forensic_surgeon.dashboard.heatmap import render_simple_heatmap
-render_simple_heatmap(db.conn)
+# 📅 CALENDAR HEATMAP (DISABLED - WIP)
+# from digital_forensic_surgeon.dashboard.heatmap import render_simple_heatmap
+# render_simple_heatmap(db.conn)
+
+st.info("📅 Calendar heatmap coming soon - shows when you're tracked most")
 
 st.markdown("---")
 

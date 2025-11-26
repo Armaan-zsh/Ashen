@@ -1,0 +1,3146 @@
+{
+  "version": "1.0",
+  "total": 180,
+  "signatures": [
+    {
+      "id": "AMAZON_001",
+      "name": "Amazon OneTag - pageview",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_002",
+      "name": "Amazon OneTag - product_view",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_003",
+      "name": "Amazon OneTag - add_to_cart",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_004",
+      "name": "Amazon OneTag - purchase",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 9.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_005",
+      "name": "Amazon OneTag - search",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_006",
+      "name": "Amazon OneTag - impression",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_007",
+      "name": "Amazon OneTag - click",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_008",
+      "name": "Amazon OneTag - wishlist",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_009",
+      "name": "Amazon OneTag - checkout",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_010",
+      "name": "Amazon OneTag - subscribe",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_011",
+      "name": "Amazon OneTag - video_view",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_012",
+      "name": "Amazon OneTag - rating",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_013",
+      "name": "Amazon OneTag - review",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_014",
+      "name": "Amazon OneTag - prime_modal",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "AMAZON_015",
+      "name": "Amazon OneTag - alexa_integration",
+      "company": "Amazon",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='amazon-adsystem.com', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_001",
+      "name": "Clarity - pageview",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_002",
+      "name": "Clarity - click",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_003",
+      "name": "Clarity - scroll",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 6.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_004",
+      "name": "Clarity - rage_click",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_005",
+      "name": "Clarity - dead_click",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_006",
+      "name": "Clarity - quick_back",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_007",
+      "name": "Clarity - session_recording",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_008",
+      "name": "Clarity - form_abandonment",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_009",
+      "name": "Clarity - error",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_010",
+      "name": "Clarity - feedback",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_011",
+      "name": "Clarity - custom_tag",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_012",
+      "name": "Clarity - conversion",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_013",
+      "name": "Clarity - frustration_signal",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_014",
+      "name": "Clarity - engagement_time",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "CLARITY_015",
+      "name": "Clarity - exit_intent",
+      "company": "Clarity",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='clarity.ms', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_001",
+      "name": "Facebook Pixel - Page View",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='ev', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_002",
+      "name": "Facebook Pixel - Add to Cart",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='AddToCart', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_003",
+      "name": "Facebook Pixel - Purchase",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 9.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='Purchase', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_004",
+      "name": "Facebook Pixel - View Content",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='ViewContent', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_005",
+      "name": "Facebook Pixel - Lead",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='Lead', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_006",
+      "name": "Facebook Pixel - InitiateCheckout",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='InitiateCheckout', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_007",
+      "name": "Facebook Pixel - Search",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='Search', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_008",
+      "name": "Facebook Pixel - AddPaymentInfo",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='AddPaymentInfo', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_009",
+      "name": "Facebook Pixel - CompleteRegistration",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='CompleteRegistration', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_010",
+      "name": "Facebook Pixel - Contact",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='Contact', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_011",
+      "name": "Facebook Pixel - CustomizeProduct",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='CustomizeProduct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_012",
+      "name": "Facebook Pixel - Donate",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='Donate', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_013",
+      "name": "Facebook Pixel - FindLocation",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='FindLocation', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_014",
+      "name": "Facebook Pixel - Schedule",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='Schedule', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_015",
+      "name": "Facebook Pixel - StartTrial",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='StartTrial', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_016",
+      "name": "Facebook Pixel - SubmitApplication",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='SubmitApplication', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_017",
+      "name": "Facebook Pixel - Subscribe",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='Subscribe', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_018",
+      "name": "Facebook Pixel - AddToWishlist",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='AddToWishlist', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "FB_PIXEL_020",
+      "name": "Facebook Pixel - ViewProduct",
+      "company": "Meta/Facebook",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='facebook.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/tr', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_VALUE: 'param_value'>, key='ev', value='ViewProduct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_001",
+      "name": "Google Ads - ad_impression",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_002",
+      "name": "Google Ads - ad_click",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_003",
+      "name": "Google Ads - conversion",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_004",
+      "name": "Google Ads - remarketing",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_005",
+      "name": "Google Ads - dynamic_remarketing",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_006",
+      "name": "Google Ads - google_shopping",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_007",
+      "name": "Google Ads - lead_conversion",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_008",
+      "name": "Google Ads - purchase_conversion",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 9.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_009",
+      "name": "Google Ads - signup_conversion",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_010",
+      "name": "Google Ads - page_view",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_011",
+      "name": "Google Ads - floodlight",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_012",
+      "name": "Google Ads - audience_pixel",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_013",
+      "name": "Google Ads - cross_device",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_014",
+      "name": "Google Ads - attribution",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "DOUBLECLICK_015",
+      "name": "Google Ads - dynamic_creative",
+      "company": "Google",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='doubleclick.net', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_001",
+      "name": "Google Analytics 4 - Page View",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_002",
+      "name": "Google Analytics - page_view",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_003",
+      "name": "Google Analytics - click",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_004",
+      "name": "Google Analytics - scroll",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 6.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_005",
+      "name": "Google Analytics - view_item",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_006",
+      "name": "Google Analytics - add_to_cart",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_007",
+      "name": "Google Analytics - purchase",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_008",
+      "name": "Google Analytics - begin_checkout",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_009",
+      "name": "Google Analytics - add_payment_info",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_010",
+      "name": "Google Analytics - add_shipping_info",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_011",
+      "name": "Google Analytics - generate_lead",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_012",
+      "name": "Google Analytics - login",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_013",
+      "name": "Google Analytics - sign_up",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_014",
+      "name": "Google Analytics - search",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_015",
+      "name": "Google Analytics - select_content",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_016",
+      "name": "Google Analytics - share",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_017",
+      "name": "Google Analytics - video_start",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_018",
+      "name": "Google Analytics - video_complete",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_019",
+      "name": "Google Analytics - view_promotion",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_020",
+      "name": "Google Analytics - select_promotion",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA4_021",
+      "name": "Google Analytics - session_start",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/g/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='v', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA_UA_022",
+      "name": "Google Analytics - pageview",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='t', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA_UA_023",
+      "name": "Google Analytics - event",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='t', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA_UA_024",
+      "name": "Google Analytics - transaction",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='t', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA_UA_025",
+      "name": "Google Analytics - item",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='t', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA_UA_026",
+      "name": "Google Analytics - social",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='t', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA_UA_027",
+      "name": "Google Analytics - exception",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='t', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA_UA_028",
+      "name": "Google Analytics - timing",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 6.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='t', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA_UA_029",
+      "name": "Google Analytics - screenview",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='t', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA_UA_030",
+      "name": "Google Analytics - ecommerce",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='t', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "GA_UA_031",
+      "name": "Google Analytics - enhanced_ecommerce",
+      "company": "Google",
+      "category": "analytics",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='google-analytics.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PARAM_KEY: 'param_key'>, key='t', value=None, regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_001",
+      "name": "Hotjar - pageview",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_002",
+      "name": "Hotjar - heatmap_click",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_003",
+      "name": "Hotjar - scroll_depth",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_004",
+      "name": "Hotjar - session_recording",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_005",
+      "name": "Hotjar - form_analysis",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_006",
+      "name": "Hotjar - feedback_widget",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_007",
+      "name": "Hotjar - survey_response",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_008",
+      "name": "Hotjar - poll_response",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_009",
+      "name": "Hotjar - conversion_funnel",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_010",
+      "name": "Hotjar - form_abandonment",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_011",
+      "name": "Hotjar - rage_click",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_012",
+      "name": "Hotjar - u_turn",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_013",
+      "name": "Hotjar - custom_event",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_014",
+      "name": "Hotjar - incoming_feedback",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "HOTJAR_015",
+      "name": "Hotjar - recruitment",
+      "company": "Hotjar",
+      "category": "analytics",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='insights.hotjar.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_001",
+      "name": "Linkedin - PageView",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_002",
+      "name": "Linkedin - Conversion",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_003",
+      "name": "Linkedin - Lead",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_004",
+      "name": "Linkedin - SignUp",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_005",
+      "name": "Linkedin - Download",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_006",
+      "name": "Linkedin - Purchase",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 9.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_007",
+      "name": "Linkedin - FormSubmit",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_008",
+      "name": "Linkedin - Subscribe",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_009",
+      "name": "Linkedin - AddToCart",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_010",
+      "name": "Linkedin - VideoStart",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_011",
+      "name": "Linkedin - VideoComplete",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_012",
+      "name": "Linkedin - ContentView",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_013",
+      "name": "Linkedin - JobApplication",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_014",
+      "name": "Linkedin - CompanyFollow",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "LINKEDIN_015",
+      "name": "Linkedin - CustomEvent",
+      "company": "Linkedin",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='px.ads.linkedin.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/collect', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_001",
+      "name": "Snapchat - PAGE_VIEW",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_002",
+      "name": "Snapchat - PURCHASE",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 9.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_003",
+      "name": "Snapchat - ADD_CART",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_004",
+      "name": "Snapchat - VIEW_CONTENT",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_005",
+      "name": "Snapchat - SIGN_UP",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_006",
+      "name": "Snapchat - SEARCH",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_007",
+      "name": "Snapchat - ADD_TO_WISHLIST",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_008",
+      "name": "Snapchat - SUBSCRIBE",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_009",
+      "name": "Snapchat - START_CHECKOUT",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_010",
+      "name": "Snapchat - COMPLETE_REGISTRATION",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_011",
+      "name": "Snapchat - LEAD",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_012",
+      "name": "Snapchat - APP_INSTALL",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_013",
+      "name": "Snapchat - APP_OPEN",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_014",
+      "name": "Snapchat - SAVE",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "SNAPCHAT_015",
+      "name": "Snapchat - CUSTOM_EVENT",
+      "company": "Snapchat",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='tr.snapchat.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/cm/i', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_001",
+      "name": "TikTok Pixel - ViewContent",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_002",
+      "name": "TikTok Pixel - ClickButton",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_003",
+      "name": "TikTok Pixel - Search",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_004",
+      "name": "TikTok Pixel - AddToCart",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_005",
+      "name": "TikTok Pixel - InitiateCheckout",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_006",
+      "name": "TikTok Pixel - AddPaymentInfo",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_007",
+      "name": "TikTok Pixel - CompletePayment",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 9.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_008",
+      "name": "TikTok Pixel - PlaceAnOrder",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 9.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_009",
+      "name": "TikTok Pixel - Contact",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_010",
+      "name": "TikTok Pixel - SubmitForm",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_011",
+      "name": "TikTok Pixel - Subscribe",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_012",
+      "name": "TikTok Pixel - Download",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_013",
+      "name": "TikTok Pixel - AddToWishlist",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_014",
+      "name": "TikTok Pixel - CompleteRegistration",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_015",
+      "name": "TikTok Pixel - ViewCategory",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_016",
+      "name": "TikTok Pixel - PageView",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_017",
+      "name": "TikTok Pixel - ViewProduct",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_018",
+      "name": "TikTok Pixel - StartTrial",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_019",
+      "name": "TikTok Pixel - EnterBio",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TIKTOK_020",
+      "name": "TikTok Pixel - ShareContent",
+      "company": "ByteDance/TikTok",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.tiktok.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/api/v2/pixel/track', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_001",
+      "name": "Twitter - PageView",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_002",
+      "name": "Twitter - Purchase",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 9.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_003",
+      "name": "Twitter - AddToCart",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_004",
+      "name": "Twitter - InitiateCheckout",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_005",
+      "name": "Twitter - ViewContent",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_006",
+      "name": "Twitter - Search",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_007",
+      "name": "Twitter - AddToWishlist",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_008",
+      "name": "Twitter - CompleteRegistration",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_009",
+      "name": "Twitter - Lead",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_010",
+      "name": "Twitter - SubmitApplication",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_011",
+      "name": "Twitter - Subscribe",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_012",
+      "name": "Twitter - StartTrial",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 8.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_013",
+      "name": "Twitter - DownloadApp",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 8.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_014",
+      "name": "Twitter - Retweet",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_015",
+      "name": "Twitter - Like",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 6.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_016",
+      "name": "Twitter - Follow",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_017",
+      "name": "Twitter - VideoView",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_018",
+      "name": "Twitter - AppEngaged",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 7.5,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_019",
+      "name": "Twitter - CustomEvent",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 7.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    },
+    {
+      "id": "TWITTER_020",
+      "name": "Twitter - ConversionEvent",
+      "company": "Twitter",
+      "category": "advertising",
+      "risk_score": 9.0,
+      "patterns": [
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.DOMAIN: 'domain'>, key=None, value='analytics.twitter.com', regex=None, required=True)"
+        },
+        {
+          "type": "contains",
+          "value": "Pattern(type=<PatternType.PATH: 'path'>, key=None, value='/i/adsct', regex=None, required=True)"
+        }
+      ]
+    }
+  ]
+}

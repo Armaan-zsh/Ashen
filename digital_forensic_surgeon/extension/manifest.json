@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "TrackerShield",
+  "version": "1.0.0",
+  "description": "See which companies track you in real-time. No proxy needed.",
+  "permissions": [
+    "webRequest",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
