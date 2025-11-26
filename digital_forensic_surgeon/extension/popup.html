@@ -1,133 +1,375 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
-  <title>TrackerShield</title>
+  <title>TrackerShield V2</title>
   <style>
-    body {
-      width: 400px;
-      min-height: 500px;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 420px;
+      min-height: 600px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      background: #1a1a1a;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
       color: #fff;
     }
-    
+
     .header {
       background: linear-gradient(135deg, #ff3b3b 0%, #cc0000 100%);
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(255, 59, 59, 0.3);
+    }
+
+    .header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .header p {
+      font-size: 13px;
+      opacity: 0.95;
+    }
+
+    /* Privacy Score Section */
+    .privacy-score-section {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
       padding: 20px;
+      margin: 15px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
       text-align: center;
     }
-    
-    .header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-    
-    .header p {
-      margin: 5px 0 0;
-      opacity: 0.9;
+
+    .privacy-score-section h3 {
       font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    
-    .stats {
+
+    .score-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .score-number {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-grade {
+      font-size: 32px;
+      font-weight: 700;
+      opacity: 0.8;
+    }
+
+    .score-label {
+      font-size: 12px;
+      opacity: 0.6;
+      margin-top: 8px;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      padding: 20px;
-      background: #2a2a2a;
-    }
-    
-    .stat-card {
-      background: #333;
+      gap: 12px;
       padding: 15px;
-      border-radius: 8px;
-      text-align: center;
     }
-    
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      boxshadow: 0 8px 24px rgba(255, 59, 59, 0.2);
+    }
+
     .stat-value {
       font-size: 32px;
-      font-weight: bold;
+      font-weight: 800;
       color: #ff3b3b;
+      margin-bottom: 4px;
+      text-shadow: 0 2px 8px rgba(255, 59, 59, 0.3);
     }
-    
+
     .stat-label {
       font-size: 12px;
       opacity: 0.7;
-      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
-    
+
+    /* Blocking Toggle */
+    .blocking-control {
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .blocking-label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 52px;
+      height: 28px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #555;
+      transition: 0.3s;
+      border-radius: 28px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+
+    input:checked+.slider {
+      background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(24px);
+    }
+
+    .blocking-status {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-top: 4px;
+    }
+
+    /* Detections Section */
     .detections {
-      padding: 20px;
-      max-height: 300px;
+      padding: 15px;
+      max-height: 400px;
       overflow-y: auto;
     }
-    
-    .detections h3 {
-      margin: 0 0 15px;
-      font-size: 16px;
+
+    .detections::-webkit-scrollbar {
+      width: 6px;
     }
-    
+
+    .detections::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 3px;
+    }
+
+    .detections::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+    }
+
+    .detections h3 {
+      font-size: 14px;
+      margin-bottom: 12px;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
     .detection-item {
-      background: #2a2a2a;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
       padding: 12px;
-      border-radius: 6px;
+      border-radius: 10px;
       margin-bottom: 10px;
       border-left: 3px solid #ff3b3b;
+      transition: all 0.2s ease;
     }
-    
+
+    .detection-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateX(2px);
+    }
+
+    .detection-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
     .detection-company {
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 14px;
       color: #ff3b3b;
     }
-    
-    .detection-name {
-      font-size: 13px;
-      opacity: 0.8;
-      margin-top: 3px;
-    }
-    
-    .detection-time {
+
+    .risk-badge {
       font-size: 11px;
-      opacity: 0.5;
-      margin-top: 5px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 12px;
+      color: #000;
     }
-    
+
+    .detection-name {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-bottom: 6px;
+    }
+
+    .data-collected {
+      font-size: 11px;
+      opacity: 0.7;
+      background: rgba(255, 59, 59, 0.1);
+      padding: 6px 8px;
+      border-radius: 6px;
+      margin: 6px 0;
+    }
+
+    .data-collected strong {
+      color: #ff3b3b;
+    }
+
+    .detection-time {
+      font-size: 10px;
+      opacity: 0.5;
+      margin-top: 6px;
+    }
+
+    /* Top Sites */
+    .site-stat {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      border-left: 3px solid #ffaa00;
+    }
+
+    .site-name {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .site-count {
+      font-size: 12px;
+      color: #ff3b3b;
+      margin-bottom: 4px;
+    }
+
+    .site-companies {
+      font-size: 11px;
+      opacity: 0.6;
+    }
+
     .empty {
       text-align: center;
       opacity: 0.5;
-      padding: 40px 20px;
+      padding: 30px 20px;
+      font-size: 13px;
     }
-    
+
+    /* Footer Buttons */
     .footer {
-      background: #2a2a2a;
+      background: rgba(0, 0, 0, 0.3);
       padding: 15px;
-      text-align: center;
-      border-top: 1px solid #333;
+      display: flex;
+      gap: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .footer button {
-      background: #ff3b3b;
+      flex: 1;
+      background: rgba(255, 255, 255, 0.1);
       color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
     }
-    
+
     .footer button:hover {
-      background: #cc0000;
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+
+    .footer button:active {
+      transform: translateY(0);
+    }
+
+    #shareBtn {
+      background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+      color: #000;
+      border: none;
+    }
+
+    #shareBtn:hover {
+      background: linear-gradient(135deg, #00cc6a 0%, #00aa55 100%);
     }
   </style>
 </head>
+
 <body>
   <div class="header">
     <h1>🛡️ TrackerShield</h1>
-    <p>Protecting your privacy in real-time</p>
+    <p>Real-time privacy protection</p>
   </div>
-  
-  <div class="stats">
+
+  <!-- Privacy Score -->
+  <div class="privacy-score-section">
+    <h3>Privacy Score</h3>
+    <div class="score-display">
+      <div class="score-number" id="privacyScore">0</div>
+      <div class="score-grade" id="privacyGrade">F</div>
+    </div>
+    <div class="score-label">Based on real tracking activity</div>
+  </div>
+
+  <!-- Stats Grid -->
+  <div class="stats-grid">
     <div class="stat-card">
       <div class="stat-value" id="todayCount">0</div>
       <div class="stat-label">Blocked Today</div>
@@ -137,21 +379,42 @@
       <div class="stat-label">Total Blocked</div>
     </div>
   </div>
-  
+
+  <!-- Blocking Toggle -->
+  <div class="blocking-control">
+    <div>
+      <div class="blocking-label">🛡️ Active Protection</div>
+      <div class="blocking-status" id="blockingStatus">Active</div>
+    </div>
+    <label class="toggle-switch">
+      <input type="checkbox" id="blockingToggle" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <!-- Recent Detections -->
   <div class="detections">
-    <h3>Recent Detections</h3>
+    <h3>🔴 Recent Detections</h3>
     <div id="detectionList">
       <div class="empty">
         No trackers detected yet.<br>
-        Browse the web to see detections!
+        Browse the web to see protection!
       </div>
     </div>
   </div>
-  
+
+  <!-- Top Sites -->
+  <div class="detections">
+    <div id="topSites"></div>
+  </div>
+
+  <!-- Footer -->
   <div class="footer">
     <button id="clearBtn">Clear History</button>
+    <button id="shareBtn">📤 Share Score</button>
   </div>
-  
+
   <script src="popup.js"></script>
 </body>
+
 </html>
