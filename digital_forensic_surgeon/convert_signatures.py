@@ -1,22 +1,20 @@
 """
-Convert TrackerShield signatures to browser extension JSON format
+Convert TrackerShield signatures to browser extension JSON format - FIXED
 """
 
 import json
-import yaml
 from pathlib import Path
+import re
 
 def convert_signatures_to_json():
     """Convert TrackerShield signatures to browser-friendly JSON"""
     
-    # Use the compiled signature database instead
     from tracker_shield.compiler.sig_compiler import SignatureCompiler
     
     output_file = Path('extension/signatures.json')
     
     compiler = SignatureCompiler()
     
-    # Load from compiled databases
     all_signatures = []
     
     # Load God tier (all 180 signatures)
@@ -25,27 +23,31 @@ def convert_signatures_to_json():
         signatures = compiler.load_database(god_db_path)
         
         for sig in signatures:
-            # Convert pattern objects to strings
-            pattern_strings = []
-            for pattern in sig.patterns[:3]:  # First 3 patterns
-                if hasattr(pattern, 'pattern'):
-                    # It's a compiled regex
-                    pattern_strings.append(pattern.pattern)
-                else:
-                    # It's already a string
-                    pattern_strings.append(str(pattern))
+            # Extract actual values from Pattern objects
+            pattern_list = []
+            for pattern in sig.patterns[:5]:  # First 5 patterns max
+                # Extract the actual value from Pattern object string representation
+                pattern_str = str(pattern)
+                
+                # Try to extract value using regex
+                if "value='" in pattern_str:
+                    match = re.search(r"value='([^']+)'", pattern_str)
+                    if match:
+                        actual_value = match.group(1)
+                        pattern_list.append({
+                            'type': 'contains',
+                            'value': actual_value
+                        })
             
-            all_signatures.append({
-                'id': sig.id,
-                'name': sig.name,
-                'company': sig.company,
-                'category': sig.category,
-                'risk_score': sig.risk_score,
-                'patterns': [
-                    {'type': 'contains', 'value': p}
-                    for p in pattern_strings
-                ]
-            })
+            if pattern_list:  # Only add if we have patterns
+                all_signatures.append({
+                    'id': sig.id,
+                    'name': sig.name,
+                    'company': sig.company,
+                    'category': sig.category,
+                    'risk_score': sig.risk_score,
+                    'patterns': pattern_list
+                })
     
     # Save to JSON
     output_file.parent.mkdir(exist_ok=True)
@@ -67,6 +69,11 @@ def convert_signatures_to_json():
     print(f"\n📊 Summary:")
     for company, count in sorted(by_company.items(), key=lambda x: x[1], reverse=True):
         print(f"   {company}: {count} signatures")
+    
+    # Show sample
+    if all_signatures:
+        print(f"\n🔍 Sample pattern:")
+        print(f"   {all_signatures[0]['patterns'][0]}")
 
 if __name__ == '__main__':
     convert_signatures_to_json()
