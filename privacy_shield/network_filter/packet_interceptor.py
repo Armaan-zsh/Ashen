@@ -31,7 +31,8 @@ class PacketInterceptor:
         try:
             domain = socket.gethostbyaddr(ip)[0]
             return domain
-        except:
+        except Exception as e:
+            # Reverse DNS failed, just use IP
             return ip
     
     def should_block(self, dst_ip):
@@ -62,30 +63,34 @@ class PacketInterceptor:
                 print(f"{Fore.CYAN}Monitoring HTTP/HTTPS traffic...\n")
                 
                 for packet in w:
-                    self.stats['total'] += 1
-                    
-                    # Extract destination IP
-                    if hasattr(packet, 'dst_addr'):
-                        dst_ip = packet.dst_addr
+                    try:
+                        self.stats['total'] += 1
                         
-                        # Check if should block
-                        should_block, domain = self.should_block(dst_ip)
-                        
-                        if should_block:
-                            self.stats['blocked'] += 1
-                            print(f"{Fore.RED}🚫 BLOCKED: {domain} ({dst_ip})")
-                            # Don't forward packet (DROP it)
-                            continue
-                        else:
-                            self.stats['allowed'] += 1
-                            # Allow packet
-                            w.send(packet)
+                        # Extract destination IP
+                        if hasattr(packet, 'dst_addr'):
+                            dst_ip = packet.dst_addr
                             
-                        # Print stats every 100 packets
-                        if self.stats['total'] % 100 == 0:
-                            self.print_stats()
-                    else:
-                        # Forward packet if no dst_addr
+                            # Check if should block
+                            should_block, domain = self.should_block(dst_ip)
+                            
+                            if should_block:
+                                self.stats['blocked'] += 1
+                                print(f"{Fore.RED}🚫 BLOCKED: {domain} ({dst_ip})")
+                                # Don't forward packet (DROP it)
+                                continue
+                            else:
+                                self.stats['allowed'] += 1
+                                # Allow packet
+                                w.send(packet)
+                                
+                            # Print stats every 100 packets
+                            if self.stats['total'] % 100 == 0:
+                                self.print_stats()
+                        else:
+                            # Forward packet if no dst_addr
+                            w.send(packet)
+                    except Exception as e:
+                        # Error processing this packet, just forward it
                         w.send(packet)
         
         except PermissionError:
